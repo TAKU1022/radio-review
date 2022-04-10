@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import { CommonLayout } from '../components/layout/CommonLayout';
-import { TopPage } from '../components/page/TopPage';
+import { Top } from '../components/page/Top';
 
-const Top: NextPage = () => {
+const TopPage: NextPage = () => {
   return (
     <CommonLayout>
-      <TopPage />
+      <Top />
     </CommonLayout>
   );
 };
 
-export default Top;
+export default TopPage;
