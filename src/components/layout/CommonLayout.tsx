@@ -9,7 +9,7 @@ type Props = {
 
 export const CommonLayout: React.VFC<Props> = ({ children }) => {
   return (
-    <Flex direction={'column'} minH={'100vh'}>
+    <Flex direction={'column'} minH={'100vh'} bgColor={'gray.50'}>
       <CommonHeader />
       <Box as={'main'} flex={1}>
         <Container maxW={'1350px'} pt={10}>
