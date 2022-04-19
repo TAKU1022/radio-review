@@ -20,7 +20,7 @@ export const Login: React.VFC = () => {
         if (result.additionalUserInfo?.isNewUser) {
           openMessage('アカウントが作成されました！', 'success');
         } else {
-          openMessage('おかえりなさい！', 'success');
+          openMessage('ログインしました！', 'success');
         }
       })
       .catch(() => {
