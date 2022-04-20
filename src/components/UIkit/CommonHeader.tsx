@@ -28,10 +28,6 @@ export const CommonHeader: React.FC = () => {
     });
   };
 
-  useEffect(() => {
-    console.log(firebaseUser);
-  }, [firebaseUser]);
-
   return (
     <Flex
       as={'header'}
