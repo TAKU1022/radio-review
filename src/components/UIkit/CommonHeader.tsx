@@ -6,6 +6,7 @@ import {
   Link,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
   Spacer,
@@ -62,6 +63,14 @@ export const CommonHeader: React.FC = () => {
             </MenuButton>
             <MenuList>
               <MenuItem onClick={signOut}>ログアウト</MenuItem>
+              {user && user.isAdmin && (
+                <>
+                  <MenuDivider />
+                  <MenuItem onClick={() => router.push('/admin')}>
+                    管理者画面
+                  </MenuItem>
+                </>
+              )}
             </MenuList>
           </Menu>
         ) : (
