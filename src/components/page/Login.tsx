@@ -6,7 +6,7 @@ import { auth } from '../../firebase';
 import { useRouter } from 'next/router';
 import { useMessage } from '../../hooks/useMessage';
 
-export const Login: React.VFC = () => {
+export const Login: React.FC = () => {
   const router = useRouter();
   const { openMessage } = useMessage();
 
@@ -20,7 +20,7 @@ export const Login: React.VFC = () => {
         if (result.additionalUserInfo?.isNewUser) {
           openMessage('アカウントが作成されました！', 'success');
         } else {
-          openMessage('おかえりなさい！', 'success');
+          openMessage('ログインしました！', 'success');
         }
       })
       .catch(() => {
