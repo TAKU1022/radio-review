@@ -6,7 +6,7 @@ import { auth } from '../../firebase';
 import { useRouter } from 'next/router';
 import { useMessage } from '../../hooks/useMessage';
 
-export const Login: React.VFC = () => {
+export const Login: React.FC = () => {
   const router = useRouter();
   const { openMessage } = useMessage();
 

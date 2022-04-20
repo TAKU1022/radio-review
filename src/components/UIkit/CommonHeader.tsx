@@ -2,7 +2,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import { Box, Flex, Link, Spacer } from '@chakra-ui/react';
 
-export const CommonHeader: React.VFC = () => {
+export const CommonHeader: React.FC = () => {
   return (
     <Flex
       as={'header'}

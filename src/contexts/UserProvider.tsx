@@ -18,13 +18,9 @@ type UserContext = {
   updateFirebaseUser: Dispatch<SetStateAction<firebase.User | null>>;
 };
 
-type Props = {
-  children: React.ReactNode;
-};
-
 export const UserContext = createContext<UserContext | null>(null);
 
-export const UserProvider: React.VFC<Props> = ({ children }) => {
+export const UserProvider: React.FC = ({ children }) => {
   const [user, updateUser] = useState<User | null>(null);
   const [firebaseUser, updateFirebaseUser] = useState<firebase.User | null>(
     null

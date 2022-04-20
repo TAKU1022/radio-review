@@ -3,11 +3,7 @@ import { Box, Container, Flex } from '@chakra-ui/react';
 import { CommonHeader } from '../UIkit/CommonHeader';
 import { CommonFooter } from '../UIkit/CommonFooter';
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export const CommonLayout: React.VFC<Props> = ({ children }) => {
+export const CommonLayout: React.FC = ({ children }) => {
   return (
     <Flex direction={'column'} minH={'100vh'} bgColor={'gray.50'}>
       <CommonHeader />
