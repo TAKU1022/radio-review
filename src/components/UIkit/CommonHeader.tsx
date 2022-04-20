@@ -38,8 +38,8 @@ export const CommonHeader: React.FC = () => {
       pos={'sticky'}
       top={0}
       px={8}
-      py={4}
       align={'center'}
+      h={16}
     >
       <Flex>
         <NextLink href="/" passHref>
