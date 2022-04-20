@@ -1,5 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
+import firebase from 'firebase/app';
 import { UserRecord } from 'firebase-admin/lib/auth/user-record';
 import { User } from '@/types/user';
 admin.initializeApp();
@@ -15,7 +16,7 @@ export const createUser = functions
       name: userRecord.displayName,
       avatarURL: userRecord.photoURL,
       email: userRecord.email,
-      createdAt: new Date(),
+      createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
       isAdmin: false,
     };
 
