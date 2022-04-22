@@ -1,0 +1,190 @@
+[
+  {
+    "code": 1,
+    "prefectures": "北海道"
+  },
+  {
+    "code": 2,
+    "prefectures": "青森県"
+  },
+  {
+    "code": 3,
+    "prefectures": "岩手県"
+  },
+  {
+    "code": 4,
+    "prefectures": "宮城県"
+  },
+  {
+    "code": 5,
+    "prefectures": "秋田県"
+  },
+  {
+    "code": 6,
+    "prefectures": "山形県"
+  },
+  {
+    "code": 7,
+    "prefectures": "福島県"
+  },
+  {
+    "code": 8,
+    "prefectures": "茨城県"
+  },
+  {
+    "code": 9,
+    "prefectures": "栃木県"
+  },
+  {
+    "code": 10,
+    "prefectures": "群馬県"
+  },
+  {
+    "code": 11,
+    "prefectures": "埼玉県"
+  },
+  {
+    "code": 12,
+    "prefectures": "千葉県"
+  },
+  {
+    "code": 13,
+    "prefectures": "東京都"
+  },
+  {
+    "code": 14,
+    "prefectures": "神奈川県"
+  },
+  {
+    "code": 15,
+    "prefectures": "新潟県"
+  },
+  {
+    "code": 16,
+    "prefectures": "富山県"
+  },
+  {
+    "code": 17,
+    "prefectures": "石川県"
+  },
+  {
+    "code": 18,
+    "prefectures": "福井県"
+  },
+  {
+    "code": 19,
+    "prefectures": "山梨県"
+  },
+  {
+    "code": 20,
+    "prefectures": "長野県"
+  },
+  {
+    "code": 21,
+    "prefectures": "岐阜県"
+  },
+  {
+    "code": 22,
+    "prefectures": "静岡県"
+  },
+  {
+    "code": 23,
+    "prefectures": "愛知県"
+  },
+  {
+    "code": 24,
+    "prefectures": "三重県"
+  },
+  {
+    "code": 25,
+    "prefectures": "滋賀県"
+  },
+  {
+    "code": 26,
+    "prefectures": "京都府"
+  },
+  {
+    "code": 27,
+    "prefectures": "大阪府"
+  },
+  {
+    "code": 28,
+    "prefectures": "兵庫県"
+  },
+  {
+    "code": 29,
+    "prefectures": "奈良県"
+  },
+  {
+    "code": 30,
+    "prefectures": "和歌山県"
+  },
+  {
+    "code": 31,
+    "prefectures": "鳥取県"
+  },
+  {
+    "code": 32,
+    "prefectures": "島根県"
+  },
+  {
+    "code": 33,
+    "prefectures": "岡山県"
+  },
+  {
+    "code": 34,
+    "prefectures": "広島県"
+  },
+  {
+    "code": 35,
+    "prefectures": "山口県"
+  },
+  {
+    "code": 36,
+    "prefectures": "徳島県"
+  },
+  {
+    "code": 37,
+    "prefectures": "香川県"
+  },
+  {
+    "code": 38,
+    "prefectures": "愛媛県"
+  },
+  {
+    "code": 39,
+    "prefectures": "高知県"
+  },
+  {
+    "code": 40,
+    "prefectures": "福岡県"
+  },
+  {
+    "code": 41,
+    "prefectures": "佐賀県"
+  },
+  {
+    "code": 42,
+    "prefectures": "長崎県"
+  },
+  {
+    "code": 43,
+    "prefectures": "熊本県"
+  },
+  {
+    "code": 44,
+    "prefectures": "大分県"
+  },
+  {
+    "code": 45,
+    "prefectures": "宮崎県"
+  },
+  {
+    "code": 46,
+    "prefectures": "鹿児島県"
+  },
+  {
+    "code": 47,
+    "prefectures": "沖縄県"
+  }
+]
