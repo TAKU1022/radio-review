@@ -1,47 +1,70 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
-import { RadikoDayProgram } from '@/types/radikoProgram';
+import { Program, RadikoDayProgram, Radio } from '@/types/radikoProgram';
+import stationData from '../../../data/station.json';
 const to_json = require('xmljson').to_json;
 
 export default async function radikoProgramApi(
   req: NextApiRequest,
-  res: NextApiResponse<RadikoDayProgram | null>
+  res: NextApiResponse<Radio[]>
 ) {
   const radikoResponse = await axios.get(
-    'http://radiko.jp/v3/program/today/JP13.xml'
+    `http://radiko.jp/v3/program/station/weekly/LFR.xml`
   );
 
-  let radikoProgramData: RadikoDayProgram | null = null;
+  let radikoProgramData: Radio[] = [];
 
   to_json(radikoResponse.data, (erorr: any, data: any) => {
     const radikoDayProgram: RadikoDayProgram = {
       radiko: {
         ...data.radiko,
         stations: {
-          station: Object.values(data.radiko.stations.station).map(
-            (station: any) => {
-              return {
-                ...station,
-                progs: {
-                  ...station.progs,
-                  prog: Object.values(station.progs.prog).map(
-                    (program: any) => {
-                      return {
-                        ...program,
-                        tag: {
-                          item: program.tag && Object.values(program.tag.item),
-                        },
-                      };
-                    }
-                  ),
-                },
-              };
-            }
-          ),
+          station: {
+            ...data.radiko.stations.station,
+            progs: Object.values(data.radiko.stations.station.progs).map(
+              (programs: any) => {
+                return {
+                  ...programs,
+                  prog: Object.values(programs.prog).map((program: any) => {
+                    return {
+                      ...program,
+                      tag: {
+                        item: program.tag && Object.values(program.tag.item),
+                      },
+                    };
+                  }),
+                };
+              }
+            ),
+          },
         },
       },
     };
-    radikoProgramData = radikoDayProgram;
+    const radioList: Radio[] = radikoDayProgram.radiko.stations.station.progs
+      .flatMap((program) => program.prog)
+      .filter(
+        (program: Program) => !program.title.includes('ショウアップナイター')
+      )
+      .map((program: Program) => {
+        return {
+          title: program.title,
+          desc: program.desc,
+          genre: program.genre,
+          img: program.img,
+          info: program.info,
+          url: program.url,
+          station: {
+            id: radikoDayProgram.radiko.stations.station.$.id,
+            name: radikoDayProgram.radiko.stations.station.name,
+          },
+        };
+      })
+      .filter((radio: Radio) => radio.title !== '放送休止');
+
+    const distinctRadioList: Radio[] = Array.from(
+      new Map(radioList.map((radio) => [radio.title, radio])).values()
+    );
+    radikoProgramData = distinctRadioList;
   });
 
   res.status(200).json(radikoProgramData);

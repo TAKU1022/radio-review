@@ -1,3 +1,19 @@
+export type Radio = {
+  title: string;
+  desc: string;
+  genre: {
+    personality: { $: { id: string }; name: string };
+    program: { $: { id: string }; name: string };
+  };
+  img: string;
+  info: string;
+  url: string;
+  station: {
+    id: string;
+    name: string;
+  };
+};
+
 export type Program = {
   $: {
     dur: string;
@@ -36,14 +52,14 @@ export type Station = {
   progs: {
     date: string;
     prog: Program[];
-  };
+  }[];
 };
 
 export type RadikoDayProgram = {
   radiko: {
     srvtime: string;
     stations: {
-      station: Station[];
+      station: Station;
     };
     ttl: string;
   };
