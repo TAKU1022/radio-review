@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "fetch": "node ./writeFile.js"
+    "fetch": "node ./writeFile.js && npx prettier --write ./src/data/*"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.8.8",
