@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Box, Button, Flex, Heading, Spinner } from '@chakra-ui/react';
+import { Box, Button, Flex, Heading, Spinner, Text } from '@chakra-ui/react';
 import useSWR from 'swr';
 import { Radio } from '@/types/radikoProgram';
 import { fetcher } from '../../util/fetcher';
@@ -19,16 +19,16 @@ export const Admin: React.FC = () => {
       <Box mt={'20'}>
         {data ? (
           <>
-            <Heading
-              as={'h2'}
+            <Text
               display={'flex'}
               justifyContent={'center'}
               fontSize={'xl'}
+              fontWeight={'bold'}
             >
               {data.length}件の番組がヒット
-            </Heading>
+            </Text>
             <Flex justify={'center'} mt={'10'}>
-              <Button colorScheme={'blue'}>番組を登録</Button>
+              <Button colorScheme={'orange'}>番組を登録</Button>
             </Flex>
           </>
         ) : (

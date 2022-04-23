@@ -42,9 +42,6 @@ export default async function radikoProgramApi(
     };
     const radioList: Radio[] = radikoDayProgram.radiko.stations.station.progs
       .flatMap((program) => program.prog)
-      .filter(
-        (program: Program) => !program.title.includes('ショウアップナイター')
-      )
       .map((program: Program) => {
         return {
           title: program.title,
@@ -58,11 +55,13 @@ export default async function radikoProgramApi(
             name: radikoDayProgram.radiko.stations.station.name,
           },
         };
-      })
+      });
+    const filteredRadioList: Radio[] = radioList
+      .filter((radio: Radio) => !radio.title.includes('ショウアップナイター'))
       .filter((radio: Radio) => radio.title !== '放送休止');
 
     const distinctRadioList: Radio[] = Array.from(
-      new Map(radioList.map((radio) => [radio.title, radio])).values()
+      new Map(filteredRadioList.map((radio) => [radio.title, radio])).values()
     );
     radikoProgramData = distinctRadioList;
   });
