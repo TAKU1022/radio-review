@@ -4,6 +4,10 @@ service cloud.firestore {
     function isLogin() {
       return request.auth.uid != null;
     }
+    function isAdmin() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.isAdmin == true;
+    }
+    
     match /users/{userId} {
       //誰でも見ることができる
       allow read: if true;
@@ -14,6 +18,16 @@ service cloud.firestore {
       allow update: if request.auth.uid == resource.data.uid && request.resource.data.uid == resource.data.uid;
       //作成者だけ削除できる
       allow delete: if request.auth.uid == resource.data.uid;
+    }
+    match /radios/{radioId} {
+      //誰でも見ることができる
+      allow read: if true;
+      //管理者だけ作成できる
+      allow create: if isAdmin()
+      //管理者だけアップデートできる
+      allow update: if isAdmin()
+      //管理者だけ削除できる
+      allow delete: if isAdmin()
     }
   }
 }
