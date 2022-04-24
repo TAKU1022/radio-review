@@ -1,8 +1,10 @@
 [
   {
+    "ascii_name": "HBC RADIO",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "HBC",
     "name": "ＨＢＣラジオ",
-    "ascii_name": "HBC RADIO",
     "ruby": "えいちびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -46,9 +48,11 @@
     "href": "https://www.hbc.co.jp"
   },
   {
+    "ascii_name": "STV RADIO",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "STV",
     "name": "ＳＴＶラジオ",
-    "ascii_name": "STV RADIO",
     "ruby": "えすてぃーびーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -92,9 +96,11 @@
     "href": "https://www.stv.jp"
   },
   {
+    "ascii_name": "AIR-G'",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "AIR-G",
     "name": "AIR-G'（FM北海道）",
-    "ascii_name": "AIR-G'",
     "ruby": "えあーじーえふえむほっかいどう",
     "areafree": "1",
     "timefree": "1",
@@ -138,9 +144,11 @@
     "href": "https://www.air-g.co.jp/"
   },
   {
+    "ascii_name": "FM NORTH WAVE",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "NORTHWAVE",
     "name": "FM NORTH WAVE",
-    "ascii_name": "FM NORTH WAVE",
     "ruby": "えふえむのーすうぇーぶ",
     "areafree": "1",
     "timefree": "1",
@@ -184,9 +192,11 @@
     "href": "https://www.fmnorth.co.jp/"
   },
   {
+    "ascii_name": "RAB",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "RAB",
     "name": "ＲＡＢ青森放送",
-    "ascii_name": "RAB",
     "ruby": "あーるえーびーあおもりほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -230,9 +240,11 @@
     "href": "https://www.rab.co.jp/"
   },
   {
+    "ascii_name": "AFB",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "AFB",
     "name": "エフエム青森",
-    "ascii_name": "AFB",
     "ruby": "えふえむあおもり",
     "areafree": "1",
     "timefree": "1",
@@ -276,9 +288,11 @@
     "href": "https://www.afb.co.jp/"
   },
   {
+    "ascii_name": "IBC RADIO",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "IBC",
     "name": "IBCラジオ",
-    "ascii_name": "IBC RADIO",
     "ruby": "あいびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -322,9 +336,11 @@
     "href": "https://www.ibc.co.jp/radio/"
   },
   {
+    "ascii_name": "FMI",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "FMI",
     "name": "エフエム岩手",
-    "ascii_name": "FMI",
     "ruby": "えふえむいわて",
     "areafree": "1",
     "timefree": "1",
@@ -368,9 +384,11 @@
     "href": "http://www.fmii.co.jp/"
   },
   {
+    "ascii_name": "TBC RADIO",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "TBC",
     "name": "TBCラジオ",
-    "ascii_name": "TBC RADIO",
     "ruby": "てぃーびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -414,9 +432,11 @@
     "href": "http://www.tbc-sendai.co.jp/02radio/"
   },
   {
+    "ascii_name": "DATE FM",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "DATEFM",
     "name": "Date fm エフエム仙台",
-    "ascii_name": "DATE FM",
     "ruby": "でーとえふえむえふえむせんだい",
     "areafree": "1",
     "timefree": "1",
@@ -460,9 +480,11 @@
     "href": "http://www.datefm.co.jp/"
   },
   {
+    "ascii_name": "ABS",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "ABS",
     "name": "ＡＢＳ秋田放送",
-    "ascii_name": "ABS",
     "ruby": "えーびーえすあきたほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -506,9 +528,11 @@
     "href": "https://www.akita-abs.co.jp/"
   },
   {
+    "ascii_name": "FM AKITA",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "AFM",
     "name": "エフエム秋田",
-    "ascii_name": "FM AKITA",
     "ruby": "えふえむあきた",
     "areafree": "1",
     "timefree": "1",
@@ -552,9 +576,11 @@
     "href": "http://www.fm-akita.co.jp/"
   },
   {
+    "ascii_name": "YBC",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "YBC",
     "name": "YBC山形放送",
-    "ascii_name": "YBC",
     "ruby": "わいびーしーやまがたほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -598,9 +624,11 @@
     "href": "http://www.ybc.co.jp/"
   },
   {
+    "ascii_name": "FM YAMAGATA",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "RFM",
     "name": "Rhythm Station　エフエム山形",
-    "ascii_name": "FM YAMAGATA",
     "ruby": "りずむすてーしょんえふえむやまがた",
     "areafree": "1",
     "timefree": "1",
@@ -644,9 +672,11 @@
     "href": "http://www.rfm.co.jp/"
   },
   {
+    "ascii_name": "RADIO FUKUSHIMA",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "RFC",
     "name": "RFCラジオ福島",
-    "ascii_name": "RADIO FUKUSHIMA",
     "ruby": "あーるえふしーらじおふくしま",
     "areafree": "1",
     "timefree": "1",
@@ -690,9 +720,11 @@
     "href": "http://www.rfc.jp/"
   },
   {
+    "ascii_name": "fmf",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "FMF",
     "name": "ふくしまFM",
-    "ascii_name": "fmf",
     "ruby": "ふくしまえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -736,9 +768,11 @@
     "href": "http://www.fmf.co.jp/"
   },
   {
+    "ascii_name": "JOIK",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "JOIK",
     "name": "NHKラジオ第1（札幌）",
-    "ascii_name": "JOIK",
     "ruby": "えぬえいちけーらじおだいいちさっぽろ",
     "areafree": "0",
     "timefree": "1",
@@ -782,9 +816,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "JOHK",
+    "region_id": "hokkaido-tohoku",
+    "region_name": "北海道・東北",
     "id": "JOHK",
     "name": "NHKラジオ第1（仙台）",
-    "ascii_name": "JOHK",
     "ruby": "えぬえいちけーらじおだいいちせんだい",
     "areafree": "0",
     "timefree": "1",
@@ -828,9 +864,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "TBS RADIO",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "TBS",
     "name": "TBSラジオ",
-    "ascii_name": "TBS RADIO",
     "ruby": "てぃーびーえすらじお",
     "areafree": "1",
     "timefree": "1",
@@ -874,9 +912,11 @@
     "href": "https://www.tbsradio.jp/"
   },
   {
+    "ascii_name": "JOQR BUNKA HOSO",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "QRR",
     "name": "文化放送",
-    "ascii_name": "JOQR BUNKA HOSO",
     "ruby": "ぶんかほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -920,9 +960,11 @@
     "href": "http://www.joqr.co.jp/"
   },
   {
+    "ascii_name": "JOLF NIPPON HOSO",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "LFR",
     "name": "ニッポン放送",
-    "ascii_name": "JOLF NIPPON HOSO",
     "ruby": "にっぽんほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -966,9 +1008,11 @@
     "href": "http://www.1242.com/"
   },
   {
+    "ascii_name": "InterFM897",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "INT",
     "name": "interfm",
-    "ascii_name": "InterFM897",
     "ruby": "いんたーえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -1012,9 +1056,11 @@
     "href": "https://www.interfm.co.jp/"
   },
   {
+    "ascii_name": "TOKYO FM",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "FMT",
     "name": "TOKYO FM",
-    "ascii_name": "TOKYO FM",
     "ruby": "とーきょーえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -1058,9 +1104,11 @@
     "href": "https://www.tfm.co.jp/"
   },
   {
+    "ascii_name": "J-WAVE",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "FMJ",
     "name": "J-WAVE",
-    "ascii_name": "J-WAVE",
     "ruby": "じぇいうぇーぶ",
     "areafree": "1",
     "timefree": "1",
@@ -1104,9 +1152,11 @@
     "href": "https://www.j-wave.co.jp/"
   },
   {
+    "ascii_name": "RF RADIO NIPPON",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "JORF",
     "name": "ラジオ日本",
-    "ascii_name": "RF RADIO NIPPON",
     "ruby": "らじおにっぽん",
     "areafree": "1",
     "timefree": "1",
@@ -1150,9 +1200,11 @@
     "href": "http://www.jorf.co.jp/"
   },
   {
+    "ascii_name": "bayfm78",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "BAYFM78",
     "name": "bayfm78",
-    "ascii_name": "bayfm78",
     "ruby": "べいえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -1196,9 +1248,11 @@
     "href": "http://www.bayfm.co.jp/"
   },
   {
+    "ascii_name": "NACK5",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "NACK5",
     "name": "NACK5",
-    "ascii_name": "NACK5",
     "ruby": "なっくふぁいぶ",
     "areafree": "1",
     "timefree": "1",
@@ -1242,9 +1296,11 @@
     "href": "https://www.nack5.co.jp/"
   },
   {
+    "ascii_name": "Fm yokohama 84.7",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "YFM",
     "name": "ＦＭヨコハマ",
-    "ascii_name": "Fm yokohama 84.7",
     "ruby": "えふえむよこはま",
     "areafree": "1",
     "timefree": "1",
@@ -1288,9 +1344,11 @@
     "href": "https://www.fmyokohama.co.jp/"
   },
   {
+    "ascii_name": "IBS RADIO",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "IBS",
     "name": "LuckyFM 茨城放送",
-    "ascii_name": "IBS RADIO",
     "ruby": "あいびーえすいばらきほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -1334,9 +1392,11 @@
     "href": "https://www.ibs-radio.com/"
   },
   {
+    "ascii_name": "CRT",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "CRT",
     "name": "CRT栃木放送",
-    "ascii_name": "CRT",
     "ruby": "しーあーるてぃーとちぎほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -1380,9 +1440,11 @@
     "href": "http://www.crt-radio.co.jp/"
   },
   {
+    "ascii_name": "RadioBerry",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "RADIOBERRY",
     "name": "RadioBerry",
-    "ascii_name": "RadioBerry",
     "ruby": "らじおべりー",
     "areafree": "1",
     "timefree": "1",
@@ -1426,9 +1488,11 @@
     "href": "http://www.berry.co.jp/"
   },
   {
+    "ascii_name": "FM GUNMA",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "FMGUNMA",
     "name": "FM GUNMA",
-    "ascii_name": "FM GUNMA",
     "ruby": "えふえむぐんま",
     "areafree": "1",
     "timefree": "1",
@@ -1472,9 +1536,11 @@
     "href": "https://www.fmgunma.com"
   },
   {
+    "ascii_name": "JOAK",
+    "region_id": "kanto",
+    "region_name": "関東",
     "id": "JOAK",
     "name": "NHKラジオ第1（東京）",
-    "ascii_name": "JOAK",
     "ruby": "えぬえいちけーらじおだいいちとうきょう",
     "areafree": "0",
     "timefree": "1",
@@ -1518,9 +1584,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "BSN RADIO",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "BSN",
     "name": "ＢＳＮラジオ",
-    "ascii_name": "BSN RADIO",
     "ruby": "びーえすえぬらじお",
     "areafree": "1",
     "timefree": "1",
@@ -1564,9 +1632,11 @@
     "href": "https://www.ohbsn.com/radio/"
   },
   {
+    "ascii_name": "FMNIIGATA",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "FMNIIGATA",
     "name": "FM NIIGATA",
-    "ascii_name": "FMNIIGATA",
     "ruby": "えふえむにいがた",
     "areafree": "1",
     "timefree": "1",
@@ -1610,9 +1680,11 @@
     "href": "https://www.fmniigata.com/"
   },
   {
+    "ascii_name": "KNB RADIO",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "KNB",
     "name": "ＫＮＢラジオ",
-    "ascii_name": "KNB RADIO",
     "ruby": "けーえぬびーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -1656,9 +1728,11 @@
     "href": "https://www.knb.ne.jp/radio/"
   },
   {
+    "ascii_name": "FM TOYAMA",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "FMTOYAMA",
     "name": "ＦＭとやま",
-    "ascii_name": "FM TOYAMA",
     "ruby": "えふえむとやま",
     "areafree": "1",
     "timefree": "1",
@@ -1702,9 +1776,11 @@
     "href": "http://www.fmtoyama.co.jp/"
   },
   {
+    "ascii_name": "MRO RADIO",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "MRO",
     "name": "MROラジオ",
-    "ascii_name": "MRO RADIO",
     "ruby": "えむあーるおーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -1748,9 +1824,11 @@
     "href": "https://www.mro.co.jp/radio/"
   },
   {
+    "ascii_name": "FM ISHIKAWA",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "HELLOFIVE",
     "name": "エフエム石川",
-    "ascii_name": "FM ISHIKAWA",
     "ruby": "えふえむいしかわ",
     "areafree": "1",
     "timefree": "1",
@@ -1794,9 +1872,11 @@
     "href": "http://hellofive.jp/index.html"
   },
   {
+    "ascii_name": "FBC RADIO",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "FBC",
     "name": "FBCラジオ",
-    "ascii_name": "FBC RADIO",
     "ruby": "えふびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -1840,9 +1920,11 @@
     "href": "http://www2.fbc.jp/radio/"
   },
   {
+    "ascii_name": "FMFUKUI",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "FMFUKUI",
     "name": "FM福井",
-    "ascii_name": "FMFUKUI",
     "ruby": "えふえむふくい",
     "areafree": "1",
     "timefree": "1",
@@ -1886,9 +1968,11 @@
     "href": "https://www.fmfukui.jp"
   },
   {
+    "ascii_name": "YBS RADIO",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "YBS",
     "name": "ＹＢＳラジオ",
-    "ascii_name": "YBS RADIO",
     "ruby": "わいびーえすらじお",
     "areafree": "1",
     "timefree": "1",
@@ -1932,9 +2016,11 @@
     "href": "https://www.ybs.jp/"
   },
   {
+    "ascii_name": "FM-FUJI",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "FM-FUJI",
     "name": "FM FUJI",
-    "ascii_name": "FM-FUJI",
     "ruby": "えふえむふじ",
     "areafree": "1",
     "timefree": "1",
@@ -1978,9 +2064,11 @@
     "href": "http://www.fmfuji.jp/"
   },
   {
+    "ascii_name": "SBCRADIO",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "SBC",
     "name": "SBCラジオ",
-    "ascii_name": "SBCRADIO",
     "ruby": "えすびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -2024,9 +2112,11 @@
     "href": "https://sbc21.co.jp/blogwp/radio/"
   },
   {
+    "ascii_name": "FM NAGANO",
+    "region_id": "hokuriku-koushinetsu",
+    "region_name": "北陸・甲信越",
     "id": "FMN",
     "name": "ＦＭ長野",
-    "ascii_name": "FM NAGANO",
     "ruby": "えふえむながの",
     "areafree": "1",
     "timefree": "1",
@@ -2070,9 +2160,11 @@
     "href": "http://www.fmnagano.co.jp/"
   },
   {
+    "ascii_name": "CBC RADIO",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "CBC",
     "name": "CBCラジオ",
-    "ascii_name": "CBC RADIO",
     "ruby": "しーびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -2116,9 +2208,11 @@
     "href": "https://hicbc.com/radio/"
   },
   {
+    "ascii_name": "TOKAIRADIO",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "TOKAIRADIO",
     "name": "東海ラジオ",
-    "ascii_name": "TOKAIRADIO",
     "ruby": "とうかいらじお",
     "areafree": "1",
     "timefree": "1",
@@ -2162,9 +2256,11 @@
     "href": "https://www.tokairadio.co.jp/"
   },
   {
+    "ascii_name": "GifuCHAN",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "GBS",
     "name": "ぎふチャン",
-    "ascii_name": "GifuCHAN",
     "ruby": "ぎふちゃん",
     "areafree": "1",
     "timefree": "1",
@@ -2208,9 +2304,11 @@
     "href": "http://www.zf-web.com/"
   },
   {
+    "ascii_name": "ZIP-FM",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "ZIP-FM",
     "name": "ZIP-FM",
-    "ascii_name": "ZIP-FM",
     "ruby": "じっぷえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -2254,9 +2352,11 @@
     "href": "https://zip-fm.co.jp/"
   },
   {
+    "ascii_name": "ATFM",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "FMAICHI",
     "name": "FM AICHI",
-    "ascii_name": "ATFM",
     "ruby": "えふえむあいち",
     "areafree": "1",
     "timefree": "1",
@@ -2300,9 +2400,11 @@
     "href": "https://fma.co.jp/"
   },
   {
+    "ascii_name": "FM GIFU",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "FMGIFU",
     "name": "ＦＭ ＧＩＦＵ",
-    "ascii_name": "FM GIFU",
     "ruby": "えふえむぎふ",
     "areafree": "1",
     "timefree": "1",
@@ -2346,9 +2448,11 @@
     "href": "http://www.fmgifu.com/"
   },
   {
+    "ascii_name": "SBS RADIO",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "SBS",
     "name": "SBSラジオ",
-    "ascii_name": "SBS RADIO",
     "ruby": "えすびーえすらじお",
     "areafree": "1",
     "timefree": "1",
@@ -2392,9 +2496,11 @@
     "href": "https://www.at-s.com/sbsradio/"
   },
   {
+    "ascii_name": "K-MIX",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "K-MIX",
     "name": "K-MIX SHIZUOKA",
-    "ascii_name": "K-MIX",
     "ruby": "けーみっくすしずおか",
     "areafree": "1",
     "timefree": "1",
@@ -2438,9 +2544,11 @@
     "href": "https://www.k-mix.co.jp/"
   },
   {
+    "ascii_name": "FM MIE",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "FMMIE",
     "name": "レディオキューブ ＦＭ三重",
-    "ascii_name": "FM MIE",
     "ruby": "れでぃおきゅーぶえふえむみえ",
     "areafree": "1",
     "timefree": "1",
@@ -2484,9 +2592,11 @@
     "href": "http://www.fmmie.jp/"
   },
   {
+    "ascii_name": "JOCK",
+    "region_id": "chubu",
+    "region_name": "中部",
     "id": "JOCK",
     "name": "NHKラジオ第1（名古屋）",
-    "ascii_name": "JOCK",
     "ruby": "えぬえいちけーらじおだいいちなごや",
     "areafree": "0",
     "timefree": "1",
@@ -2530,9 +2640,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "ABC RADIO",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "ABC",
     "name": "ABCラジオ",
-    "ascii_name": "ABC RADIO",
     "ruby": "えーびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -2576,9 +2688,11 @@
     "href": "https://www.abc1008.com/"
   },
   {
+    "ascii_name": "MBS RADIO",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "MBS",
     "name": "MBSラジオ",
-    "ascii_name": "MBS RADIO",
     "ruby": "えむびーえすらじお",
     "areafree": "1",
     "timefree": "1",
@@ -2622,9 +2736,11 @@
     "href": "https://www.mbs1179.com/"
   },
   {
+    "ascii_name": "OBC RADIO",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "OBC",
     "name": "OBCラジオ大阪",
-    "ascii_name": "OBC RADIO",
     "ruby": "おーびーしーらじおおおさか",
     "areafree": "1",
     "timefree": "1",
@@ -2668,9 +2784,11 @@
     "href": "http://www.obc1314.co.jp/"
   },
   {
+    "ascii_name": "FM COCOLO",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "CCL",
     "name": "FM COCOLO",
-    "ascii_name": "FM COCOLO",
     "ruby": "えふえむこころ",
     "areafree": "1",
     "timefree": "1",
@@ -2714,9 +2832,11 @@
     "href": "https://cocolo.jp"
   },
   {
+    "ascii_name": "FM802",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "802",
     "name": "FM802",
-    "ascii_name": "FM802",
     "ruby": "えふえむはちまるに",
     "areafree": "1",
     "timefree": "1",
@@ -2760,9 +2880,11 @@
     "href": "https://funky802.com/"
   },
   {
+    "ascii_name": "FMO",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "FMO",
     "name": "FM大阪",
-    "ascii_name": "FMO",
     "ruby": "えふえむおおさか",
     "areafree": "1",
     "timefree": "1",
@@ -2806,9 +2928,11 @@
     "href": "http://fmosaka.net/"
   },
   {
+    "ascii_name": "Kiss FM KOBE",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "KISSFMKOBE",
     "name": "Kiss FM KOBE",
-    "ascii_name": "Kiss FM KOBE",
     "ruby": "きっすえふえむこうべ",
     "areafree": "1",
     "timefree": "1",
@@ -2852,9 +2976,11 @@
     "href": "https://www.kiss-fm.co.jp/"
   },
   {
+    "ascii_name": "RADIO KANSAI",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "CRK",
     "name": "ラジオ関西",
-    "ascii_name": "RADIO KANSAI",
     "ruby": "しーあるけーらじおかんさい",
     "areafree": "1",
     "timefree": "1",
@@ -2898,9 +3024,11 @@
     "href": "https://jocr.jp/"
   },
   {
+    "ascii_name": "E-RADIO",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "E-RADIO",
     "name": "e-radio FM滋賀",
-    "ascii_name": "E-RADIO",
     "ruby": "いーらじおえふえむしが",
     "areafree": "1",
     "timefree": "1",
@@ -2944,9 +3072,11 @@
     "href": "https://www.e-radio.co.jp/"
   },
   {
+    "ascii_name": "KBS-KYOTO RADIO",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "KBS",
     "name": "KBS京都ラジオ",
-    "ascii_name": "KBS-KYOTO RADIO",
     "ruby": "けーびーえすきょうとらじお",
     "areafree": "1",
     "timefree": "1",
@@ -2990,9 +3120,11 @@
     "href": "https://www.kbs-kyoto.co.jp/"
   },
   {
+    "ascii_name": "ALPHA-STATION",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "ALPHA-STATION",
     "name": "α-STATION FM KYOTO",
-    "ascii_name": "ALPHA-STATION",
     "ruby": "あるふぁすてーしょんえふえむきょうと",
     "areafree": "1",
     "timefree": "1",
@@ -3036,9 +3168,11 @@
     "href": "http://fm-kyoto.jp/"
   },
   {
+    "ascii_name": "WBS RADIO",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "WBS",
     "name": "wbs和歌山放送",
-    "ascii_name": "WBS RADIO",
     "ruby": "だぶりゅーびーえすわかやまほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -3082,9 +3216,11 @@
     "href": "https://www.wbs.co.jp/"
   },
   {
+    "ascii_name": "JOBK",
+    "region_id": "kinki",
+    "region_name": "近畿",
     "id": "JOBK",
     "name": "NHKラジオ第1（大阪）",
-    "ascii_name": "JOBK",
     "ruby": "えぬえいちけーらじおだいいちおおさか",
     "areafree": "0",
     "timefree": "1",
@@ -3128,9 +3264,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "BSS RADIO",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "BSS",
     "name": "BSSラジオ",
-    "ascii_name": "BSS RADIO",
     "ruby": "びーえすえすらじお",
     "areafree": "1",
     "timefree": "1",
@@ -3174,9 +3312,11 @@
     "href": "https://www.bss.jp/radio/"
   },
   {
+    "ascii_name": "FMSANIN",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "FM-SANIN",
     "name": "エフエム山陰",
-    "ascii_name": "FMSANIN",
     "ruby": "えふえむさんいん",
     "areafree": "1",
     "timefree": "1",
@@ -3220,9 +3360,11 @@
     "href": "http://www.fm-sanin.co.jp/"
   },
   {
+    "ascii_name": "RSK",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "RSK",
     "name": "ＲＳＫラジオ",
-    "ascii_name": "RSK",
     "ruby": "あーるえすけーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -3266,9 +3408,11 @@
     "href": "http://www.rsk.co.jp/"
   },
   {
+    "ascii_name": "FM-OKAYAMA",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "FM-OKAYAMA",
     "name": "ＦＭ岡山",
-    "ascii_name": "FM-OKAYAMA",
     "ruby": "えふえむおかやま",
     "areafree": "1",
     "timefree": "1",
@@ -3312,9 +3456,11 @@
     "href": "http://www.fm-okayama.co.jp/"
   },
   {
+    "ascii_name": "RCC RADIO",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "RCC",
     "name": "RCCラジオ",
-    "ascii_name": "RCC RADIO",
     "ruby": "あーるしーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -3358,9 +3504,11 @@
     "href": "https://radio.rcc.jp/"
   },
   {
+    "ascii_name": "HIROSHIMA-FM",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "HFM",
     "name": "広島FM",
-    "ascii_name": "HIROSHIMA-FM",
     "ruby": "ひろしまえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -3404,9 +3552,11 @@
     "href": "http://www.hiroshima-fm.co.jp/"
   },
   {
+    "ascii_name": "KRY",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "KRY",
     "name": "ＫＲＹ山口放送",
-    "ascii_name": "KRY",
     "ruby": "けーあーるわいやまぐちほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -3450,9 +3600,11 @@
     "href": "http://kry.co.jp/"
   },
   {
+    "ascii_name": "FMY",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "FMY",
     "name": "エフエム山口",
-    "ascii_name": "FMY",
     "ruby": "えふえむやまぐち",
     "areafree": "1",
     "timefree": "1",
@@ -3496,9 +3648,11 @@
     "href": "http://www.fmy.co.jp/"
   },
   {
+    "ascii_name": "JRT",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "JRT",
     "name": "ＪＲＴ四国放送",
-    "ascii_name": "JRT",
     "ruby": "じぇいあーるてぃーしこくほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -3542,9 +3696,11 @@
     "href": "http://www.jrt.co.jp/"
   },
   {
+    "ascii_name": "FM807",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "FM807",
     "name": "FM徳島",
-    "ascii_name": "FM807",
     "ruby": "えふえむとくしま",
     "areafree": "1",
     "timefree": "1",
@@ -3588,9 +3744,11 @@
     "href": "http://www.fm807.jp/"
   },
   {
+    "ascii_name": "RNC",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "RNC",
     "name": "RNC西日本放送",
-    "ascii_name": "RNC",
     "ruby": "あーるえぬしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -3634,9 +3792,11 @@
     "href": "http://www.rnc.co.jp/"
   },
   {
+    "ascii_name": "FM KAGAWA",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "FMKAGAWA",
     "name": "エフエム香川",
-    "ascii_name": "FM KAGAWA",
     "ruby": "えふえむかがわ",
     "areafree": "1",
     "timefree": "1",
@@ -3680,9 +3840,11 @@
     "href": "https://www.fmkagawa.co.jp/"
   },
   {
+    "ascii_name": "RNB",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "RNB",
     "name": "RNB南海放送",
-    "ascii_name": "RNB",
     "ruby": "あーるえぬびーなんかいほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -3726,9 +3888,11 @@
     "href": "https://www.rnb.co.jp/"
   },
   {
+    "ascii_name": "JOEU-FM",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "JOEU-FM",
     "name": "FM愛媛",
-    "ascii_name": "JOEU-FM",
     "ruby": "えふえむえひめ",
     "areafree": "1",
     "timefree": "1",
@@ -3772,9 +3936,11 @@
     "href": "https://www.joeufm.co.jp/"
   },
   {
+    "ascii_name": "RKC",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "RKC",
     "name": "RKC高知放送",
-    "ascii_name": "RKC",
     "ruby": "あーるけーしーこうちほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -3818,9 +3984,11 @@
     "href": "http://www.rkc-kochi.co.jp/"
   },
   {
+    "ascii_name": "Hi-Six",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "HI-SIX",
     "name": "エフエム高知",
-    "ascii_name": "Hi-Six",
     "ruby": "えふえむこうち",
     "areafree": "1",
     "timefree": "1",
@@ -3864,9 +4032,11 @@
     "href": "http://www.fmkochi.com/"
   },
   {
+    "ascii_name": "JOFK",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "JOFK",
     "name": "NHKラジオ第1（広島）",
-    "ascii_name": "JOFK",
     "ruby": "えぬえいちけーらじおだいいちひろしま",
     "areafree": "0",
     "timefree": "1",
@@ -3910,9 +4080,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "JOZK",
+    "region_id": "chugoku-shikoku",
+    "region_name": "中国・四国",
     "id": "JOZK",
     "name": "NHKラジオ第1（松山）",
-    "ascii_name": "JOZK",
     "ruby": "えぬえいちけーらじおだいいちまつやま",
     "areafree": "0",
     "timefree": "1",
@@ -3956,9 +4128,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "RKB",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "RKB",
     "name": "RKBラジオ",
-    "ascii_name": "RKB",
     "ruby": "あーるけーびーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -4002,9 +4176,11 @@
     "href": "https://rkbr.jp/"
   },
   {
+    "ascii_name": "KBC RADIO",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "KBC",
     "name": "KBCラジオ",
-    "ascii_name": "KBC RADIO",
     "ruby": "けーびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -4048,9 +4224,11 @@
     "href": "https://kbc.co.jp/radio/"
   },
   {
+    "ascii_name": "LOVE FM",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "LOVEFM",
     "name": "LOVE FM",
-    "ascii_name": "LOVE FM",
     "ruby": "らぶえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -4094,9 +4272,11 @@
     "href": "https://www.lovefm.co.jp/"
   },
   {
+    "ascii_name": "cross fm",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "CROSSFM",
     "name": "CROSS FM",
-    "ascii_name": "cross fm",
     "ruby": "くろすえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -4140,9 +4320,11 @@
     "href": "http://www.crossfm.co.jp/"
   },
   {
+    "ascii_name": "FM FUKUOKA",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "FMFUKUOKA",
     "name": "FM FUKUOKA",
-    "ascii_name": "FM FUKUOKA",
     "ruby": "えふえむふくおか",
     "areafree": "1",
     "timefree": "1",
@@ -4186,9 +4368,11 @@
     "href": "https://fmfukuoka.co.jp"
   },
   {
+    "ascii_name": "FMSAGA",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "FMS",
     "name": "エフエム佐賀",
-    "ascii_name": "FMSAGA",
     "ruby": "えふえむさが",
     "areafree": "1",
     "timefree": "1",
@@ -4232,9 +4416,11 @@
     "href": "http://www.fmsaga.co.jp/"
   },
   {
+    "ascii_name": "NBC RADIO",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "NBC",
     "name": "NBCラジオ",
-    "ascii_name": "NBC RADIO",
     "ruby": "えぬびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -4278,9 +4464,11 @@
     "href": "https://www.nbc-nagasaki.co.jp/radio/"
   },
   {
+    "ascii_name": "FM NAGASAKI",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "FMNAGASAKI",
     "name": "FM長崎",
-    "ascii_name": "FM NAGASAKI",
     "ruby": "えふえむながさき",
     "areafree": "1",
     "timefree": "1",
@@ -4324,9 +4512,11 @@
     "href": "http://www.fmnagasaki.co.jp/"
   },
   {
+    "ascii_name": "RKK RADIO",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "RKK",
     "name": "RKKラジオ",
-    "ascii_name": "RKK RADIO",
     "ruby": "あーるけーけーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -4370,9 +4560,11 @@
     "href": "http://rkk.jp/radio/"
   },
   {
+    "ascii_name": "FMK",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "FMK",
     "name": "FMKエフエム熊本",
-    "ascii_name": "FMK",
     "ruby": "えふえむけーえふえむくまもと",
     "areafree": "1",
     "timefree": "1",
@@ -4416,9 +4608,11 @@
     "href": "https://fmk.fm/"
   },
   {
+    "ascii_name": "OBS RADIO",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "OBS",
     "name": "OBSラジオ",
-    "ascii_name": "OBS RADIO",
     "ruby": "おーびーえすらじお",
     "areafree": "1",
     "timefree": "1",
@@ -4462,9 +4656,11 @@
     "href": "https://1098.am/"
   },
   {
+    "ascii_name": "FM OITA",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "FM_OITA",
     "name": "エフエム大分",
-    "ascii_name": "FM OITA",
     "ruby": "えふえむおおいた",
     "areafree": "1",
     "timefree": "1",
@@ -4508,9 +4704,11 @@
     "href": "http://www.fmoita.co.jp"
   },
   {
+    "ascii_name": "MRT RADIO",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "MRT",
     "name": "宮崎放送",
-    "ascii_name": "MRT RADIO",
     "ruby": "みやざきほうそう",
     "areafree": "1",
     "timefree": "1",
@@ -4554,9 +4752,11 @@
     "href": "http://mrt.jp/radio/"
   },
   {
+    "ascii_name": "FMMIYAZAKI",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "JOYFM",
     "name": "エフエム宮崎",
-    "ascii_name": "FMMIYAZAKI",
     "ruby": "えふえむみやざき",
     "areafree": "1",
     "timefree": "1",
@@ -4600,9 +4800,11 @@
     "href": "http://www.joyfm.co.jp/"
   },
   {
+    "ascii_name": "MBC RADIO",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "MBC",
     "name": "ＭＢＣラジオ",
-    "ascii_name": "MBC RADIO",
     "ruby": "えむびーしーらじお",
     "areafree": "1",
     "timefree": "1",
@@ -4646,9 +4848,11 @@
     "href": "https://www.mbc.co.jp/radio/"
   },
   {
+    "ascii_name": "MYUFM",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "MYUFM",
     "name": "μＦＭ",
-    "ascii_name": "MYUFM",
     "ruby": "みゅーえふえむ",
     "areafree": "1",
     "timefree": "1",
@@ -4692,9 +4896,11 @@
     "href": "http://www.myufm.jp/myufmjp/myufm/"
   },
   {
+    "ascii_name": "RBCi RADIO",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "RBC",
     "name": "RBCiラジオ",
-    "ascii_name": "RBCi RADIO",
     "ruby": "あーるびーしーあいらじお",
     "areafree": "1",
     "timefree": "1",
@@ -4738,9 +4944,11 @@
     "href": "https://www.rbc.co.jp/"
   },
   {
+    "ascii_name": "ROK",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "ROK",
     "name": "ラジオ沖縄",
-    "ascii_name": "ROK",
     "ruby": "らじおおきなわ",
     "areafree": "1",
     "timefree": "1",
@@ -4784,9 +4992,11 @@
     "href": "http://www.rokinawa.co.jp/"
   },
   {
+    "ascii_name": "FM_OKINAWA",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "FM_OKINAWA",
     "name": "FM沖縄",
-    "ascii_name": "FM_OKINAWA",
     "ruby": "えふえむおきなわ",
     "areafree": "1",
     "timefree": "1",
@@ -4830,9 +5040,11 @@
     "href": "https://www.fmokinawa.co.jp/"
   },
   {
+    "ascii_name": "JOLK",
+    "region_id": "kyushu",
+    "region_name": "九州・沖縄",
     "id": "JOLK",
     "name": "NHKラジオ第1（福岡）",
-    "ascii_name": "JOLK",
     "ruby": "えぬえいちけーらじおだいいちふくおか",
     "areafree": "0",
     "timefree": "1",
@@ -4876,9 +5088,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "RADIONIKKEI",
+    "region_id": "zenkoku",
+    "region_name": "全国",
     "id": "RN1",
     "name": "ラジオNIKKEI第1",
-    "ascii_name": "RADIONIKKEI",
     "ruby": "らじおにっけいだいいち",
     "areafree": "1",
     "timefree": "1",
@@ -4922,9 +5136,11 @@
     "href": "http://www.radionikkei.jp/"
   },
   {
+    "ascii_name": "RADIONIKKEI2",
+    "region_id": "zenkoku",
+    "region_name": "全国",
     "id": "RN2",
     "name": "ラジオNIKKEI第2",
-    "ascii_name": "RADIONIKKEI2",
     "ruby": "らじおにっけいだいに",
     "areafree": "1",
     "timefree": "1",
@@ -4968,9 +5184,11 @@
     "href": "http://www.radionikkei.jp/ "
   },
   {
+    "ascii_name": "HOUSOU-DAIGAKU",
+    "region_id": "zenkoku",
+    "region_name": "全国",
     "id": "HOUSOU-DAIGAKU",
     "name": "放送大学",
-    "ascii_name": "HOUSOU-DAIGAKU",
     "ruby": "ほうそうだいがく",
     "areafree": "1",
     "timefree": "1",
@@ -5014,9 +5232,11 @@
     "href": "https://www.ouj.ac.jp/"
   },
   {
+    "ascii_name": "JOAB",
+    "region_id": "zenkoku",
+    "region_name": "全国",
     "id": "JOAB",
     "name": "NHKラジオ第2",
-    "ascii_name": "JOAB",
     "ruby": "えぬえいちけーらじおだいに",
     "areafree": "0",
     "timefree": "1",
@@ -5060,9 +5280,11 @@
     "href": "https://www.nhk.or.jp/radio/"
   },
   {
+    "ascii_name": "JOAK-FM",
+    "region_id": "zenkoku",
+    "region_name": "全国",
     "id": "JOAK-FM",
     "name": "NHK-FM（東京）",
-    "ascii_name": "JOAK-FM",
     "ruby": "えぬえいちけーえふえむとうきょう",
     "areafree": "0",
     "timefree": "1",

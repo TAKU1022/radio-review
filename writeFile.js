@@ -8,10 +8,10 @@ const fetchStation = async () => {
   let stationDataArray = [];
 
   to_json(res.data, (error, data) => {
-    const stationArray = data.region.stations;
-    Object.values(stationArray).forEach((stations) => {
+    const stationsData = data.region.stations;
+    Object.values(stationsData).forEach((stations) => {
       Object.values(stations.station).forEach((station) => {
-        stationDataArray.push(station);
+        stationDataArray.push({ ...stations.$, ...station });
       });
     });
   });
