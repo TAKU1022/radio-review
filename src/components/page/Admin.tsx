@@ -3,12 +3,20 @@ import { Box, Button, Flex, Heading, Spinner, Text } from '@chakra-ui/react';
 import useSWR from 'swr';
 import { Radio } from '@/types/radikoProgram';
 import { fetcher } from '../../util/fetcher';
+import { createRadio } from '../../firebase/db/radio';
 
 export const Admin: React.FC = () => {
-  const { data } = useSWR<Radio[]>(`/api/RadikoProgram`, fetcher);
+  const { data } = useSWR<Omit<Radio, 'radioId'>[]>(
+    `/api/RadikoProgram`,
+    fetcher
+  );
+
+  const onClickCreateButton = () => {
+    data && createRadio(data[0]);
+  };
 
   useEffect(() => {
-    console.log(data);
+    // console.log(data);
   }, [data]);
 
   return (
@@ -28,7 +36,9 @@ export const Admin: React.FC = () => {
               {data.length}件の番組がヒット
             </Text>
             <Flex justify={'center'} mt={'10'}>
-              <Button colorScheme={'orange'}>番組を登録</Button>
+              <Button colorScheme={'orange'} onClick={onClickCreateButton}>
+                番組を登録
+              </Button>
             </Flex>
           </>
         ) : (

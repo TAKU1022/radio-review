@@ -1,4 +1,5 @@
 export type Radio = {
+  radioId: string;
   title: string;
   desc: string;
   genre: {

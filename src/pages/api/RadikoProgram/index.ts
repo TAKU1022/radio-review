@@ -6,13 +6,13 @@ const to_json = require('xmljson').to_json;
 
 export default async function radikoProgramApi(
   req: NextApiRequest,
-  res: NextApiResponse<Radio[]>
+  res: NextApiResponse<Omit<Radio, 'radioId'>[]>
 ) {
   const radikoResponse = await axios.get(
     `http://radiko.jp/v3/program/station/weekly/LFR.xml`
   );
 
-  let radikoProgramData: Radio[] = [];
+  let radikoProgramData: Omit<Radio, 'radioId'>[] = [];
 
   to_json(radikoResponse.data, (erorr: any, data: any) => {
     const radikoDayProgram: RadikoDayProgram = {
@@ -40,27 +40,31 @@ export default async function radikoProgramApi(
         },
       },
     };
-    const radioList: Radio[] = radikoDayProgram.radiko.stations.station.progs
-      .flatMap((program) => program.prog)
-      .map((program: Program) => {
-        return {
-          title: program.title,
-          desc: program.desc,
-          genre: program.genre,
-          img: program.img,
-          info: program.info,
-          url: program.url,
-          station: {
-            id: radikoDayProgram.radiko.stations.station.$.id,
-            name: radikoDayProgram.radiko.stations.station.name,
-          },
-        };
-      });
-    const filteredRadioList: Radio[] = radioList
-      .filter((radio: Radio) => !radio.title.includes('ショウアップナイター'))
-      .filter((radio: Radio) => radio.title !== '放送休止');
+    const radioList: Omit<Radio, 'radioId'>[] =
+      radikoDayProgram.radiko.stations.station.progs
+        .flatMap((program) => program.prog)
+        .map((program: Program) => {
+          return {
+            title: program.title,
+            desc: program.desc,
+            genre: program.genre,
+            img: program.img,
+            info: program.info,
+            url: program.url,
+            station: {
+              id: radikoDayProgram.radiko.stations.station.$.id,
+              name: radikoDayProgram.radiko.stations.station.name,
+            },
+          };
+        });
+    const filteredRadioList: Omit<Radio, 'radioId'>[] = radioList
+      .filter(
+        (radio: Omit<Radio, 'radioId'>) =>
+          !radio.title.includes('ショウアップナイター')
+      )
+      .filter((radio: Omit<Radio, 'radioId'>) => radio.title !== '放送休止');
 
-    const distinctRadioList: Radio[] = Array.from(
+    const distinctRadioList: Omit<Radio, 'radioId'>[] = Array.from(
       new Map(filteredRadioList.map((radio) => [radio.title, radio])).values()
     );
     radikoProgramData = distinctRadioList;
