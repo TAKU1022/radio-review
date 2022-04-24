@@ -43,7 +43,7 @@ export const UserProvider: React.FC = ({ children }) => {
               firebaseUserData.getIdToken(true);
             });
         } else {
-          router.push('/sign_in');
+          router.push('/');
           updateUser(null);
         }
 

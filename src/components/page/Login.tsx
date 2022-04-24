@@ -18,9 +18,9 @@ export const Login: React.FC = () => {
       .then((result) => {
         router.push('/');
         if (result.additionalUserInfo?.isNewUser) {
-          openMessage('アカウントが作成されました！', 'success');
+          openMessage('アカウントが作成されました', 'success');
         } else {
-          openMessage('ログインしました！', 'success');
+          openMessage('ログインしました', 'success');
         }
       })
       .catch(() => {
