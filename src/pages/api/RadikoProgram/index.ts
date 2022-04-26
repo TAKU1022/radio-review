@@ -8,11 +8,11 @@ export default async function radikoProgramApi(
   req: NextApiRequest,
   res: NextApiResponse<Omit<Radio, 'radioId'>[]>
 ) {
+  const radikoProgramData: Omit<Radio, 'radioId'>[] = [];
+
   const radikoResponse = await axios.get(
     `http://radiko.jp/v3/program/station/weekly/LFR.xml`
   );
-
-  let radikoProgramData: Omit<Radio, 'radioId'>[] = [];
 
   to_json(radikoResponse.data, (erorr: any, data: any) => {
     const radikoDayProgram: RadikoDayProgram = {
@@ -60,14 +60,15 @@ export default async function radikoProgramApi(
     const filteredRadioList: Omit<Radio, 'radioId'>[] = radioList
       .filter(
         (radio: Omit<Radio, 'radioId'>) =>
-          !radio.title.includes('ショウアップナイター')
+          !radio.title.includes('ショウアップナイター') &&
+          !radio.title.includes('Part')
       )
       .filter((radio: Omit<Radio, 'radioId'>) => radio.title !== '放送休止');
 
     const distinctRadioList: Omit<Radio, 'radioId'>[] = Array.from(
       new Map(filteredRadioList.map((radio) => [radio.title, radio])).values()
     );
-    radikoProgramData = distinctRadioList;
+    radikoProgramData.push(...distinctRadioList);
   });
 
   res.status(200).json(radikoProgramData);

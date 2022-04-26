@@ -14,15 +14,15 @@ import { userConverter } from '../firebase/db/user';
 type UserContext = {
   user: User | null;
   firebaseUser: firebase.User | null;
-  updateUser: Dispatch<SetStateAction<User | null>>;
-  updateFirebaseUser: Dispatch<SetStateAction<firebase.User | null>>;
+  changeUser: Dispatch<SetStateAction<User | null>>;
+  changeFirebaseUser: Dispatch<SetStateAction<firebase.User | null>>;
 };
 
 export const UserContext = createContext<UserContext | null>(null);
 
 export const UserProvider: React.FC = ({ children }) => {
-  const [user, updateUser] = useState<User | null>(null);
-  const [firebaseUser, updateFirebaseUser] = useState<firebase.User | null>(
+  const [user, changeUser] = useState<User | null>(null);
+  const [firebaseUser, changeFirebaseUser] = useState<firebase.User | null>(
     null
   );
   const router = useRouter();
@@ -39,15 +39,15 @@ export const UserProvider: React.FC = ({ children }) => {
             .withConverter(userConverter)
             .doc(uid)
             .onSnapshot((snapshot) => {
-              updateUser(snapshot.data() || null);
+              changeUser(snapshot.data() || null);
               firebaseUserData.getIdToken(true);
             });
         } else {
           router.push('/');
-          updateUser(null);
+          changeUser(null);
         }
 
-        updateFirebaseUser(firebaseUserData);
+        changeFirebaseUser(firebaseUserData);
       }
     );
 
@@ -59,7 +59,7 @@ export const UserProvider: React.FC = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ user, firebaseUser, updateUser, updateFirebaseUser }}
+      value={{ user, firebaseUser, changeUser, changeFirebaseUser }}
     >
       {children}
     </UserContext.Provider>
