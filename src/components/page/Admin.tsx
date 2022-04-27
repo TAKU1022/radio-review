@@ -13,11 +13,19 @@ import { Radio } from '@/types/radikoProgram';
 import { fetcher } from '../../util/fetcher';
 import { createRadio } from '../../firebase/db/radio';
 import stationData from '../../data/station.json';
+import { useForm } from 'react-hook-form';
+
+type FormData = {
+  regionName: string;
+  stationId: string;
+};
 
 export const Admin: React.FC = () => {
-  const [regionSelectValue, changeRegionSelectValue] = useState('');
+  const { register, handleSubmit, formState } = useForm<FormData>();
+  const [regionSelectValue, changeRegionSelectValue] = useState<string>('');
+  const [stationSelectValue, changeStationSelectValue] = useState<string>('');
   const { data } = useSWR<Omit<Radio, 'radioId'>[]>(
-    `/api/RadikoProgram`,
+    `/api/RadikoProgram/${stationSelectValue}`,
     fetcher
   );
 
@@ -25,8 +33,8 @@ export const Admin: React.FC = () => {
     changeRegionSelectValue(event.currentTarget.value);
   };
 
-  const onClickCreateButton = () => {
-    data && createRadio(data[0]);
+  const onSubmit = (formData: FormData) => {
+    changeStationSelectValue(formData.stationId);
   };
 
   useEffect(() => {
@@ -39,67 +47,74 @@ export const Admin: React.FC = () => {
         管理者画面
       </Heading>
       <Box mt={20}>
-        {data ? (
-          <>
-            <Box mx={'auto'} maxW={420}>
-              <form>
-                <Select
-                  placeholder="地域を選択"
-                  onChange={onChangeRegionSelect}
-                >
-                  {Array.from(
-                    new Set(stationData.map((station) => station.region_name))
-                  ).map((region_name) => (
-                    <option key={region_name} value={region_name}>
-                      {region_name}
-                    </option>
-                  ))}
-                </Select>
-                <Select
-                  placeholder="局を選択"
-                  disabled={regionSelectValue === ''}
-                  mt={4}
-                >
-                  {stationData
-                    .filter(
-                      (station) => station.region_name === regionSelectValue
-                    )
-                    .map((station) => (
-                      <option key={station.id} value={station.id}>
-                        {station.name}
-                      </option>
-                    ))}
-                </Select>
-                <Flex mt={6} justifyContent={'center'}>
-                  <Button colorScheme={'orange'}>番組データを取得</Button>
-                </Flex>
-              </form>
-            </Box>
-
-            {/* <Text
-              display={'flex'}
-              justifyContent={'center'}
-              fontSize={'xl'}
-              fontWeight={'bold'}
+        <Box mx={'auto'} maxW={420}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <Select
+              {...register('regionName', { required: true })}
+              placeholder="地域を選択"
+              onChange={onChangeRegionSelect}
             >
-              {data.length}件の番組がヒット
-            </Text>
-            <Flex justify={'center'} mt={'10'}>
-              <Button colorScheme={'orange'} onClick={onClickCreateButton}>
-                番組を登録
+              {Array.from(
+                new Set(stationData.map((station) => station.region_name))
+              ).map((region_name) => (
+                <option key={region_name} value={region_name}>
+                  {region_name}
+                </option>
+              ))}
+            </Select>
+            <Select
+              {...register('stationId', { required: true })}
+              placeholder="局を選択"
+              disabled={regionSelectValue === ''}
+              mt={4}
+            >
+              {stationData
+                .filter((station) => station.region_name === regionSelectValue)
+                .map((station) => (
+                  <option key={station.id} value={station.id}>
+                    {station.name}
+                  </option>
+                ))}
+            </Select>
+            <Flex mt={6} justifyContent={'center'}>
+              <Button
+                type="submit"
+                colorScheme={'orange'}
+                isLoading={formState.isSubmitting}
+              >
+                番組データを取得
               </Button>
-            </Flex> */}
-          </>
-        ) : (
-          <Flex justify={'center'}>
-            <Spinner
-              thickness={'4px'}
-              speed={'0.65s'}
-              emptyColor={'gray.200'}
-              color={'blue.300'}
-              size={'xl'}
-            />
-          </Flex>
+            </Flex>
+          </form>
+        </Box>
+        {formState.isSubmitted && (
+          <Box mt={14}>
+            {data ? (
+              <>
+                <Text
+                  display={'flex'}
+                  justifyContent={'center'}
+                  fontSize={'xl'}
+                  fontWeight={'bold'}
+                >
+                  {data.length}件の番組がヒット
+                </Text>
+                <Flex justify={'center'} mt={'10'}>
+                  <Button colorScheme={'orange'}>番組を登録</Button>
+                </Flex>
+              </>
+            ) : (
+              <Flex justify={'center'}>
+                <Spinner
+                  thickness={'4px'}
+                  speed={'0.65s'}
+                  emptyColor={'gray.200'}
+                  color={'blue.300'}
+                  size={'xl'}
+                />
+              </Flex>
+            )}
+          </Box>
         )}
       </Box>
     </>
