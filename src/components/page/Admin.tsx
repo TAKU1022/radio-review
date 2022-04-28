@@ -1,9 +1,13 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Button,
   Flex,
+  Grid,
+  GridItem,
   Heading,
+  Image,
+  Link,
   Select,
   Spinner,
   Text,
@@ -21,25 +25,34 @@ type FormData = {
 };
 
 export const Admin: React.FC = () => {
-  const { register, handleSubmit, formState } = useForm<FormData>();
-  const [regionSelectValue, changeRegionSelectValue] = useState<string>('');
-  const [stationSelectValue, changeStationSelectValue] = useState<string>('');
+  const { register, watch, handleSubmit, formState } = useForm<FormData>();
+  const regionSelectValue = watch('regionName');
+  const [stationId, changeStationId] = useState<string>('');
   const { data } = useSWR<Omit<Radio, 'radioId'>[]>(
-    `/api/RadikoProgram/${stationSelectValue}`,
+    `/api/RadikoProgram/${stationId ? stationId : ''}`,
     fetcher
   );
-
-  const onChangeRegionSelect = (event: ChangeEvent<HTMLSelectElement>) => {
-    changeRegionSelectValue(event.currentTarget.value);
-  };
+  const [selectedRadioList, changeSelectedRadioList] = useState<
+    Omit<Radio, 'radioId'>[]
+  >([]);
 
   const onSubmit = (formData: FormData) => {
-    changeStationSelectValue(formData.stationId);
+    changeStationId(formData.stationId);
+  };
+
+  const onClickProgram = (radio: Omit<Radio, 'radioId'>) => {
+    if (selectedRadioList.includes(radio)) {
+      changeSelectedRadioList((prevState) => [
+        ...prevState.filter((radioData) => radioData !== radio),
+      ]);
+    } else {
+      changeSelectedRadioList((prevState) => [...prevState, radio]);
+    }
   };
 
   useEffect(() => {
-    console.log(data);
-  }, [data]);
+    console.log(selectedRadioList);
+  }, [selectedRadioList]);
 
   return (
     <>
@@ -52,7 +65,6 @@ export const Admin: React.FC = () => {
             <Select
               {...register('regionName', { required: true })}
               placeholder="地域を選択"
-              onChange={onChangeRegionSelect}
             >
               {Array.from(
                 new Set(stationData.map((station) => station.region_name))
@@ -65,7 +77,7 @@ export const Admin: React.FC = () => {
             <Select
               {...register('stationId', { required: true })}
               placeholder="局を選択"
-              disabled={regionSelectValue === ''}
+              disabled={!regionSelectValue}
               mt={4}
             >
               {stationData
@@ -94,13 +106,63 @@ export const Admin: React.FC = () => {
                 <Text
                   display={'flex'}
                   justifyContent={'center'}
-                  fontSize={'xl'}
+                  fontSize={'2xl'}
                   fontWeight={'bold'}
                 >
                   {data.length}件の番組がヒット
                 </Text>
-                <Flex justify={'center'} mt={'10'}>
-                  <Button colorScheme={'orange'}>番組を登録</Button>
+                <Flex mt={8}>
+                  <Box flexShrink={0} mr={10}>
+                    <Box pos={'sticky'} top={'100px'} w={44}>
+                      <Text fontSize={'2xl'} fontWeight={'bold'}>
+                        選択した番組
+                      </Text>
+                    </Box>
+                  </Box>
+                  <Grid templateColumns="repeat(3, 1fr)" gap={4}>
+                    {data.map((radio: Omit<Radio, 'radioId'>) => (
+                      <GridItem
+                        key={radio.title}
+                        w={'100%'}
+                        overflow={'hidden'}
+                        bgColor={
+                          selectedRadioList.includes(radio) ? 'gray.300' : ''
+                        }
+                      >
+                        <Image
+                          src={radio.img}
+                          alt={radio.title}
+                          w={'100%'}
+                          cursor={'pointer'}
+                          opacity={selectedRadioList.includes(radio) ? 0.6 : 1}
+                          _hover={{ opacity: 0.6 }}
+                          onClick={() => onClickProgram(radio)}
+                        />
+                        <Box p={2}>
+                          <Text
+                            fontSize={'lg'}
+                            fontWeight={'bold'}
+                            cursor={'pointer'}
+                            opacity={
+                              selectedRadioList.includes(radio) ? 0.6 : 1
+                            }
+                            _hover={{ opacity: 0.6 }}
+                            onClick={() => onClickProgram(radio)}
+                          >
+                            {radio.title}
+                          </Text>
+                          <Link
+                            href={radio.url}
+                            target="_blank"
+                            rel="noreferrer"
+                            color={'blue.300'}
+                          >
+                            {radio.url}
+                          </Link>
+                        </Box>
+                      </GridItem>
+                    ))}
+                  </Grid>
                 </Flex>
               </>
             ) : (

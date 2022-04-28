@@ -37,6 +37,7 @@ export const CommonHeader: React.FC = () => {
       px={8}
       align={'center'}
       h={16}
+      zIndex={999}
     >
       <Flex>
         <NextLink href="/" passHref>

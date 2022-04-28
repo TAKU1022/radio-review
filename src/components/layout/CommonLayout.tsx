@@ -8,7 +8,7 @@ export const CommonLayout: React.FC = ({ children }) => {
     <Flex direction={'column'} minH={'100vh'} bgColor={'gray.50'}>
       <CommonHeader />
       <Box as={'main'} flex={1}>
-        <Container maxW={'1350px'} pt={10}>
+        <Container maxW={'1350px'} pt={10} pb={20}>
           {children}
         </Container>
       </Box>

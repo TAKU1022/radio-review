@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios';
-import { Program, RadikoDayProgram, Radio } from '@/types/radikoProgram';
+import { Program, RadikoWeekProgram, Radio } from '@/types/radikoProgram';
 const to_json = require('xmljson').to_json;
 
 export default async function radikoProgramApi(
@@ -8,7 +8,6 @@ export default async function radikoProgramApi(
   res: NextApiResponse<Omit<Radio, 'radioId'>[]>
 ) {
   const stationId = req.query.stationId as string;
-  console.log(stationId);
   const radikoResponse = await axios.get(
     `http://radiko.jp/v3/program/station/weekly/${stationId}.xml`
   );
@@ -16,7 +15,7 @@ export default async function radikoProgramApi(
   const radikoProgramData: Omit<Radio, 'radioId'>[] = [];
 
   to_json(radikoResponse.data, (erorr: any, data: any) => {
-    const radikoDayProgram: RadikoDayProgram = {
+    const radikoDayProgram: RadikoWeekProgram = {
       radiko: {
         ...data.radiko,
         stations: {
@@ -47,7 +46,6 @@ export default async function radikoProgramApi(
         .map((program: Program) => {
           return {
             title: program.title,
-            desc: program.desc,
             genre: program.genre,
             img: program.img,
             info: program.info,
@@ -58,16 +56,9 @@ export default async function radikoProgramApi(
             },
           };
         });
-    const filteredRadioList: Omit<Radio, 'radioId'>[] = radioList
-      .filter(
-        (radio: Omit<Radio, 'radioId'>) =>
-          !radio.title.includes('ショウアップナイター') &&
-          !radio.title.includes('Part')
-      )
-      .filter((radio: Omit<Radio, 'radioId'>) => radio.title !== '放送休止');
 
     const distinctRadioList: Omit<Radio, 'radioId'>[] = Array.from(
-      new Map(filteredRadioList.map((radio) => [radio.title, radio])).values()
+      new Map(radioList.map((radio) => [radio.title, radio])).values()
     );
     radikoProgramData.push(...distinctRadioList);
   });
