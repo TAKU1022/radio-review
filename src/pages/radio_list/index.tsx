@@ -1,0 +1,13 @@
+import type { NextPage } from 'next';
+import { CommonLayout } from '../../components/layout/CommonLayout';
+import { RadioList } from '../../components/page/RadioList';
+
+const TopPage: NextPage = () => {
+  return (
+    <CommonLayout>
+      <RadioList />
+    </CommonLayout>
+  );
+};
+
+export default TopPage;
