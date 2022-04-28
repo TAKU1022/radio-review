@@ -17,7 +17,7 @@ export const radioConverter = {
   },
 };
 
-export const createRadio = (radio: Omit<Radio, 'radioId'>) => {
+export const createRadio = (radio: Omit<Radio, 'radioId'>): Promise<void> => {
   const radioId: string = db.collection('_').doc().id;
   return db
     .collection('radios')
