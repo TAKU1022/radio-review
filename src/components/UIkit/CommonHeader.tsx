@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import NextLink from 'next/link';
 import {
   Avatar,
   Flex,
+  HStack,
   Link,
   Menu,
   MenuButton,
@@ -40,7 +41,7 @@ export const CommonHeader: React.FC = () => {
       zIndex={999}
     >
       <Flex>
-        <NextLink href="/" passHref>
+        <NextLink href={'/'} passHref>
           <Link
             color={'white'}
             fontSize={'x-large'}
@@ -54,24 +55,31 @@ export const CommonHeader: React.FC = () => {
       <Spacer />
       <Flex>
         {firebaseUser ? (
-          <Menu>
-            <MenuButton>
-              <Avatar name={user?.name} src={user?.avatarURL} size={'sm'} />
-            </MenuButton>
-            <MenuList>
-              <MenuItem onClick={signOut}>ログアウト</MenuItem>
-              {user && user.isAdmin && (
-                <>
-                  <MenuDivider />
-                  <MenuItem onClick={() => router.push('/admin')}>
-                    管理者画面
-                  </MenuItem>
-                </>
-              )}
-            </MenuList>
-          </Menu>
+          <HStack spacing={4}>
+            <NextLink href={'/radio_list/'} passHref>
+              <Link color={'white'} fontWeight={'bold'}>
+                番組を探す
+              </Link>
+            </NextLink>
+            <Menu>
+              <MenuButton>
+                <Avatar name={user?.name} src={user?.avatarURL} size={'sm'} />
+              </MenuButton>
+              <MenuList>
+                <MenuItem onClick={signOut}>ログアウト</MenuItem>
+                {user && user.isAdmin && (
+                  <>
+                    <MenuDivider />
+                    <MenuItem onClick={() => router.push('/admin')}>
+                      管理者画面
+                    </MenuItem>
+                  </>
+                )}
+              </MenuList>
+            </Menu>
+          </HStack>
         ) : (
-          <NextLink href="/login" passHref>
+          <NextLink href={'/login'} passHref>
             <Link color={'white'} fontWeight={'bold'}>
               ログイン
             </Link>
