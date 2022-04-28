@@ -10,6 +10,7 @@
     "fetch": "node ./writeFile.js && npx prettier --write ./src/data/*"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
@@ -20,6 +21,7 @@
     "next": "12.1.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.30.0",
     "react-icons": "^4.3.1",
     "swr": "^1.3.0",
     "xmljson": "^0.2.0"
