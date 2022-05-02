@@ -33,21 +33,13 @@ const Hits: React.FC<HitsProvided<Radio>> = ({ hits }) => {
           maxW={'480px'}
           mx={'auto'}
         >
-          <NextLink
-            href={'/radio/[radioId]'}
-            as={`/radio/${hit.radioId}`}
-            passHref
-          >
+          <NextLink href={`/radio/${hit.radioId}`} passHref>
             <Link>
               <Image src={hit.img} alt={hit.title} />
             </Link>
           </NextLink>
           <Box py={4} px={2}>
-            <NextLink
-              href={'/radio/[radioId]'}
-              as={`/radio/${hit.radioId}`}
-              passHref
-            >
+            <NextLink href={`/radio/${hit.radioId}`} passHref>
               <Link>
                 <Text fontSize={'lg'} fontWeight={'bold'}>
                   {hit.title}
