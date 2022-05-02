@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { CommonLayout } from '../../components/layout/CommonLayout';
 import { RadioList } from '../../components/page/RadioList';
 
-const TopPage: NextPage = () => {
+const RadioListPage: NextPage = () => {
   return (
     <CommonLayout>
       <RadioList />
@@ -10,4 +10,4 @@ const TopPage: NextPage = () => {
   );
 };
 
-export default TopPage;
+export default RadioListPage;

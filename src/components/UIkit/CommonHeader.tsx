@@ -2,6 +2,7 @@ import React from 'react';
 import NextLink from 'next/link';
 import {
   Avatar,
+  Box,
   Flex,
   HStack,
   Link,
@@ -56,27 +57,29 @@ export const CommonHeader: React.FC = () => {
       <Flex>
         {firebaseUser ? (
           <HStack spacing={4}>
-            <NextLink href={'/radio_list/'} passHref>
+            <NextLink href={'/radio_list'} passHref>
               <Link color={'white'} fontWeight={'bold'}>
                 番組を探す
               </Link>
             </NextLink>
-            <Menu>
-              <MenuButton>
-                <Avatar name={user?.name} src={user?.avatarURL} size={'sm'} />
-              </MenuButton>
-              <MenuList>
-                <MenuItem onClick={signOut}>ログアウト</MenuItem>
-                {user && user.isAdmin && (
-                  <>
-                    <MenuDivider />
-                    <MenuItem onClick={() => router.push('/admin')}>
-                      管理者画面
-                    </MenuItem>
-                  </>
-                )}
-              </MenuList>
-            </Menu>
+            <Box>
+              <Menu>
+                <MenuButton>
+                  <Avatar name={user?.name} src={user?.avatarURL} size={'sm'} />
+                </MenuButton>
+                <MenuList>
+                  <MenuItem onClick={signOut}>ログアウト</MenuItem>
+                  {user && user.isAdmin && (
+                    <>
+                      <MenuDivider />
+                      <MenuItem onClick={() => router.push('/admin')}>
+                        管理者画面
+                      </MenuItem>
+                    </>
+                  )}
+                </MenuList>
+              </Menu>
+            </Box>
           </HStack>
         ) : (
           <NextLink href={'/login'} passHref>
