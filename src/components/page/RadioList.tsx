@@ -2,9 +2,10 @@ import React from 'react';
 import { Box, Center, Heading } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { InstantSearch } from 'react-instantsearch-dom';
-import { SearchState } from 'react-instantsearch-core';
+import { Configure, SearchState } from 'react-instantsearch-core';
 import { searchClient } from '../../algolia/client';
 import { CustomHits } from '../UIkit/CustomHits';
+import { CustomPagination } from '../UIkit/CustomPagination';
 
 export const RadioList: React.FC = () => {
   const router = useRouter();
@@ -29,13 +30,21 @@ export const RadioList: React.FC = () => {
       <Center>
         <Heading>番組一覧</Heading>
       </Center>
-      <InstantSearch
-        searchClient={searchClient}
-        onSearchStateChange={updateQueryParams}
-        indexName={'radios'}
-      >
-        <CustomHits />
-      </InstantSearch>
+      <Box mt={10}>
+        <InstantSearch
+          searchClient={searchClient}
+          onSearchStateChange={updateQueryParams}
+          indexName={'radios'}
+        >
+          <Configure hitsPerPage={12} />
+          <CustomHits />
+          <Box mt={10}>
+            <CustomPagination
+              defaultRefinement={(router.query.page as string) || 1}
+            />
+          </Box>
+        </InstantSearch>
+      </Box>
     </Box>
   );
 };

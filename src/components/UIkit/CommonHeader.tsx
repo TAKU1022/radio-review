@@ -57,7 +57,7 @@ export const CommonHeader: React.FC = () => {
       <Flex>
         {firebaseUser ? (
           <HStack spacing={4}>
-            <NextLink href={'/radio_list/'} passHref>
+            <NextLink href={'/radio_list'} passHref>
               <Link color={'white'} fontWeight={'bold'}>
                 番組を探す
               </Link>
