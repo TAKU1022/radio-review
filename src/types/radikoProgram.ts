@@ -62,8 +62,10 @@ export type Radio = {
   desc?: string;
   info: string;
   url: string;
+  pfm: string;
   station: {
     id: string;
     name: string;
+    logo: string;
   };
 };
