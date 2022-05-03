@@ -48,6 +48,7 @@ export default async function radikoProgramApi(
             title: program.title,
             genre: program.genre,
             img: program.img,
+            desc: program.desc,
             info: program.info,
             url: program.url,
             station: {

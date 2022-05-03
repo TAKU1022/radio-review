@@ -59,6 +59,7 @@ export type Radio = {
       }
     | string;
   img: string;
+  desc?: string;
   info: string;
   url: string;
   station: {
