@@ -26,7 +26,7 @@ export const RadioList: React.FC = () => {
   };
 
   return (
-    <Box>
+    <>
       <Center>
         <Heading>番組一覧</Heading>
       </Center>
@@ -45,6 +45,6 @@ export const RadioList: React.FC = () => {
           </Box>
         </InstantSearch>
       </Box>
-    </Box>
+    </>
   );
 };

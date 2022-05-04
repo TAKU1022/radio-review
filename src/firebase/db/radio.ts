@@ -24,3 +24,31 @@ export const createRadio = (radio: Omit<Radio, 'radioId'>): Promise<void> => {
     .doc(radioId)
     .set({ ...radio, radioId });
 };
+
+export const fetchAllRadio = async (): Promise<Radio[]> => {
+  const snapshot = await db
+    .collection('radios')
+    .withConverter(radioConverter)
+    .get();
+  const radioList = snapshot.docs.map(
+    (doc: firebase.firestore.QueryDocumentSnapshot<Radio>) => doc.data()
+  );
+
+  return radioList;
+};
+
+export const fetchRadioById = async (
+  radioId: string
+): Promise<Radio | undefined> => {
+  const snapshot = await db
+    .collection('radios')
+    .withConverter(radioConverter)
+    .doc(radioId)
+    .get();
+
+  return snapshot.data();
+};
+
+export const deleteRadioById = async (radioId: string): Promise<void> => {
+  return db.collection('radios').doc(radioId).delete();
+};

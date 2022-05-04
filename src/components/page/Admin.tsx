@@ -155,61 +155,67 @@ export const Admin: React.FC = () => {
                       )}
                     </Box>
                   </Box>
-                  <Grid templateColumns="repeat(3, 1fr)" gap={4}>
-                    {data.map((radio: Omit<Radio, 'radioId'>) => (
-                      <GridItem
-                        key={radio.title}
-                        w={'100%'}
-                        overflow={'hidden'}
-                        pos={'relative'}
-                        bgColor={
-                          selectedRadioList.includes(radio) ? 'gray.300' : ''
-                        }
-                      >
-                        {selectedRadioList.includes(radio) && (
-                          <CheckCircleIcon
-                            color={'orange.400'}
-                            w={10}
-                            h={10}
-                            pos={'absolute'}
-                            top={0}
-                            right={0}
-                            zIndex={1}
-                          />
-                        )}
-                        <Image
-                          src={radio.img}
-                          alt={radio.title}
+                  <Grid as={'ul'} templateColumns="repeat(3, 1fr)" gap={4}>
+                    {data.map(
+                      (radio: Omit<Radio, 'radioId'>, index: number) => (
+                        <GridItem
+                          key={index}
+                          as={'li'}
                           w={'100%'}
-                          cursor={'pointer'}
-                          opacity={selectedRadioList.includes(radio) ? 0.6 : 1}
-                          _hover={{ opacity: 0.6 }}
-                          onClick={() => onClickProgram(radio)}
-                        />
-                        <Box p={2}>
-                          <Text
-                            fontSize={'lg'}
-                            fontWeight={'bold'}
+                          overflow={'hidden'}
+                          pos={'relative'}
+                          bgColor={
+                            selectedRadioList.includes(radio) ? 'gray.300' : ''
+                          }
+                        >
+                          {selectedRadioList.includes(radio) && (
+                            <CheckCircleIcon
+                              color={'orange.400'}
+                              w={10}
+                              h={10}
+                              pos={'absolute'}
+                              top={0}
+                              right={0}
+                              zIndex={1}
+                            />
+                          )}
+                          <Image
+                            src={radio.img}
+                            alt={radio.title}
+                            w={'100%'}
                             cursor={'pointer'}
                             opacity={
                               selectedRadioList.includes(radio) ? 0.6 : 1
                             }
                             _hover={{ opacity: 0.6 }}
                             onClick={() => onClickProgram(radio)}
-                          >
-                            {radio.title}
-                          </Text>
-                          <Link
-                            href={radio.url}
-                            target="_blank"
-                            rel="noreferrer"
-                            color={'blue.300'}
-                          >
-                            {radio.url}
-                          </Link>
-                        </Box>
-                      </GridItem>
-                    ))}
+                          />
+                          <Box p={2}>
+                            <Text
+                              fontSize={'lg'}
+                              fontWeight={'bold'}
+                              cursor={'pointer'}
+                              opacity={
+                                selectedRadioList.includes(radio) ? 0.6 : 1
+                              }
+                              _hover={{ opacity: 0.6 }}
+                              onClick={() => onClickProgram(radio)}
+                            >
+                              {radio.title}
+                            </Text>
+                            <Text>{radio.pfm}</Text>
+                            <Link
+                              href={radio.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              color={'blue.300'}
+                            >
+                              {radio.url}
+                            </Link>
+                          </Box>
+                        </GridItem>
+                      )
+                    )}
                   </Grid>
                 </Flex>
               </>
