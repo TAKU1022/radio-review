@@ -12,22 +12,27 @@ service cloud.firestore {
       //誰でも見ることができる
       allow read: if true;
       //ログインした人だけ作成できる
-      allow create: if isLogin()
+      allow create: if isLogin();
       //作成者かつ、そのユーザーを変えようとしていない人がアップデートできる
       //後半は受信データ(request.resource.data)と既存のデータ(resource.data)を比較している
       allow update: if request.auth.uid == resource.data.uid && request.resource.data.uid == resource.data.uid;
       //作成者だけ削除できる
       allow delete: if request.auth.uid == resource.data.uid;
+
+      match /likedRadios/{radioId} {
+        allow read: if true;
+        allow write: if request.auth.uid == userId;
+      }
     }
     match /radios/{radioId} {
       //誰でも見ることができる
       allow read: if true;
       //管理者だけ作成できる
-      allow create: if isAdmin()
+      allow create: if isAdmin();
       //管理者だけアップデートできる
-      allow update: if isAdmin()
+      allow update: if isAdmin();
       //管理者だけ削除できる
-      allow delete: if isAdmin()
+      allow delete: if isAdmin();
     }
   }
 }
