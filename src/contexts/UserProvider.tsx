@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 import firebase from 'firebase/app';
 import { User } from '@/types/user';
-import { useRouter } from 'next/router';
 import { auth, db } from '../firebase';
 import { userConverter } from '../firebase/db/user';
 
@@ -25,7 +24,6 @@ export const UserProvider: React.FC = ({ children }) => {
   const [firebaseUser, changeFirebaseUser] = useState<firebase.User | null>(
     null
   );
-  const router = useRouter();
 
   useEffect(() => {
     let unsubscribeUser: firebase.Unsubscribe;
@@ -43,7 +41,6 @@ export const UserProvider: React.FC = ({ children }) => {
               firebaseUserData.getIdToken(true);
             });
         } else {
-          router.push('/');
           changeUser(null);
         }
 

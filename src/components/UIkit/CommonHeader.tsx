@@ -25,7 +25,6 @@ export const CommonHeader: React.FC = () => {
 
   const signOut = () => {
     auth.signOut().then(() => {
-      router.push('/');
       openMessage('ログアウトに成功しました', 'success');
     });
   };
