@@ -77,7 +77,7 @@ export const RadioDetail: React.FC<Props> = ({ radio }) => {
           )}
           <Box
             dangerouslySetInnerHTML={{ __html: customInfo }}
-            mt={10}
+            mt={isExistDesc ? 0 : 10}
             className={style.info}
           />
         </Box>
