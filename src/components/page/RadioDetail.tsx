@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Button,
@@ -13,19 +13,58 @@ import {
 } from '@chakra-ui/react';
 import { Radio } from '@/types/radikoProgram';
 import style from '../../styles/RadioDetail.module.css';
+import { useRouter } from 'next/router';
+import { useUser } from '../../hooks/useUser';
+import {
+  fetchIsLikedRadio,
+  likeRadio,
+  unLikeRadio,
+} from '../../firebase/db/like';
+import { useMessage } from '../../hooks/useMessage';
 
 type Props = {
   radio: Radio | undefined;
 };
 
 export const RadioDetail: React.FC<Props> = ({ radio }) => {
-  if (!radio) return null;
+  const router = useRouter();
+  const { user } = useUser();
+  const { openMessage } = useMessage();
 
-  const isExistDesc = !radio.desc || radio.desc === '';
-  const customInfo = radio.info.replace(
-    /<a/g,
-    '<a target="_blank" rel="noreferrer"'
-  );
+  const [isLiked, changeIsLiked] = useState(false);
+  const isExistDesc = radio && (!radio.desc || radio.desc === '');
+  const customInfo = radio
+    ? radio.info.replace(/<a/g, '<a target="_blank" rel="noreferrer"')
+    : '';
+
+  const onClickLikeButton = () => {
+    if (!radio) return;
+    if (!user) return router.push('/login');
+
+    if (isLiked) {
+      unLikeRadio(user.uid, radio.radioId).then(() => {
+        changeIsLiked(false);
+        openMessage('お気に入りから削除しました', 'success');
+      });
+    } else {
+      likeRadio(user.uid, radio.radioId).then(() => {
+        changeIsLiked(true);
+        openMessage('お気に入りに登録しました', 'success');
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (user && radio) {
+      fetchIsLikedRadio(user.uid, radio.radioId).then(
+        (isLikedRadio: boolean) => {
+          changeIsLiked(isLikedRadio);
+        }
+      );
+    }
+  }, [user, radio]);
+
+  if (!radio) return null;
 
   return (
     <>
@@ -61,7 +100,9 @@ export const RadioDetail: React.FC<Props> = ({ radio }) => {
             mt={4}
           />
           <HStack mt={4} spacing={4}>
-            <Button colorScheme={'orange'}>お気に入りに登録</Button>
+            <Button colorScheme={'orange'} onClick={onClickLikeButton}>
+              {isLiked ? 'お気に入りから削除' : 'お気に入りに登録'}
+            </Button>
             <Button colorScheme={'orange'}>レビューを投稿</Button>
           </HStack>
         </Box>

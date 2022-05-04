@@ -9,6 +9,7 @@ import firebase from 'firebase/app';
 import { User } from '@/types/user';
 import { auth, db } from '../firebase';
 import { userConverter } from '../firebase/db/user';
+import { destroyCookie, setCookie } from 'nookies';
 
 type UserContext = {
   user: User | null;
@@ -31,6 +32,7 @@ export const UserProvider: React.FC = ({ children }) => {
       (firebaseUserData: firebase.User | null) => {
         if (firebaseUserData) {
           const uid = firebaseUserData.uid;
+          setCookie(null, 'uid', uid, { maxAge: 30 * 24 * 60 * 60 });
 
           unsubscribeUser = db
             .collection('users')
@@ -41,6 +43,7 @@ export const UserProvider: React.FC = ({ children }) => {
               firebaseUserData.getIdToken(true);
             });
         } else {
+          destroyCookie(null, 'uid');
           changeUser(null);
         }
 

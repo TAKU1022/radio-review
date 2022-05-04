@@ -27,6 +27,7 @@ export const getServerSideProps: GetServerSideProps = async (
 ) => {
   const radioId = context.params ? (context.params.slug as string) : '';
   const radio = await fetchRadioById(radioId);
+
   return { props: { radio } };
 };
 
