@@ -48,3 +48,7 @@ export const fetchRadioById = async (
 
   return snapshot.data();
 };
+
+export const deleteRadioById = async (radioId: string): Promise<void> => {
+  return db.collection('radios').doc(radioId).delete();
+};

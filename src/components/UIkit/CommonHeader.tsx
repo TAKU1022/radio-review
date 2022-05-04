@@ -54,33 +54,31 @@ export const CommonHeader: React.FC = () => {
         </NextLink>
       </Flex>
       <Spacer />
-      <Flex>
+      <HStack spacing={4}>
+        <NextLink href={'/radio_list'} passHref>
+          <Link color={'white'} fontWeight={'bold'}>
+            番組を探す
+          </Link>
+        </NextLink>
         {firebaseUser ? (
-          <HStack spacing={4}>
-            <NextLink href={'/radio_list'} passHref>
-              <Link color={'white'} fontWeight={'bold'}>
-                番組を探す
-              </Link>
-            </NextLink>
-            <Box>
-              <Menu>
-                <MenuButton>
-                  <Avatar name={user?.name} src={user?.avatarURL} size={'sm'} />
-                </MenuButton>
-                <MenuList>
-                  <MenuItem onClick={signOut}>ログアウト</MenuItem>
-                  {user && user.isAdmin && (
-                    <>
-                      <MenuDivider />
-                      <MenuItem onClick={() => router.push('/admin')}>
-                        管理者画面
-                      </MenuItem>
-                    </>
-                  )}
-                </MenuList>
-              </Menu>
-            </Box>
-          </HStack>
+          <Box>
+            <Menu>
+              <MenuButton>
+                <Avatar name={user?.name} src={user?.avatarURL} size={'sm'} />
+              </MenuButton>
+              <MenuList>
+                <MenuItem onClick={signOut}>ログアウト</MenuItem>
+                {user && user.isAdmin && (
+                  <>
+                    <MenuDivider />
+                    <MenuItem onClick={() => router.push('/admin')}>
+                      管理者画面
+                    </MenuItem>
+                  </>
+                )}
+              </MenuList>
+            </Menu>
+          </Box>
         ) : (
           <NextLink href={'/login'} passHref>
             <Link color={'white'} fontWeight={'bold'}>
@@ -88,7 +86,7 @@ export const CommonHeader: React.FC = () => {
             </Link>
           </NextLink>
         )}
-      </Flex>
+      </HStack>
     </Flex>
   );
 };

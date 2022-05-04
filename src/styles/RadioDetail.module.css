@@ -1,3 +1,7 @@
+.info img {
+  display: inline-block;
+}
+
 .info a {
   color: #63b3ed;
 }
