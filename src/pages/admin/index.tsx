@@ -1,12 +1,15 @@
 import { NextPage } from 'next';
+import { AdminGuard } from '../../components/functional/AdminGuard';
 import { CommonLayout } from '../../components/layout/CommonLayout';
 import { Admin } from '../../components/page/Admin';
 
 const AdminPage: NextPage = () => {
   return (
-    <CommonLayout>
-      <Admin />
-    </CommonLayout>
+    <AdminGuard>
+      <CommonLayout>
+        <Admin />
+      </CommonLayout>
+    </AdminGuard>
   );
 };
 
