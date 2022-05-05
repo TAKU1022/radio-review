@@ -32,27 +32,25 @@ export const Search: React.FC = () => {
         <Heading>{router.query.q}に関する番組</Heading>
       </Center>
       <Box mt={10}>
-        <Box mt={10}>
-          <InstantSearch
-            searchClient={searchClient}
-            onSearchStateChange={updateQueryParams}
-            indexName={'radios'}
-            refresh={true}
-          >
-            <Configure hitsPerPage={12} />
-            <Box maxW={'460px'} mx={'auto'}>
-              <CustomSearchBox defaultRefinement={router.query.q as string} />
-            </Box>
-            <Box mt={10}>
-              <CustomHits />
-            </Box>
-            <Box mt={10}>
-              <CustomPagination
-                defaultRefinement={(router.query.page as string) || 1}
-              />
-            </Box>
-          </InstantSearch>
-        </Box>
+        <InstantSearch
+          searchClient={searchClient}
+          onSearchStateChange={updateQueryParams}
+          indexName={'radios'}
+          refresh={true}
+        >
+          <Configure hitsPerPage={12} />
+          <Box maxW={'460px'} mx={'auto'}>
+            <CustomSearchBox defaultRefinement={router.query.q as string} />
+          </Box>
+          <Box mt={10}>
+            <CustomHits />
+          </Box>
+          <Box mt={10}>
+            <CustomPagination
+              defaultRefinement={(router.query.page as string) || 1}
+            />
+          </Box>
+        </InstantSearch>
       </Box>
     </>
   );
