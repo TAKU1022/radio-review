@@ -35,7 +35,6 @@ export const RadioList: React.FC = () => {
         <Box maxW={'460px'} mx={'auto'}>
           <SearchForm />
         </Box>
-
         <Box mt={10}>
           <InstantSearch
             searchClient={searchClient}
