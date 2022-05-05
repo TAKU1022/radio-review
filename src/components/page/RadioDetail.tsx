@@ -50,12 +50,6 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
     }
   };
 
-  useEffect(() => {
-    if (!user) {
-      changeIsLiked(false);
-    }
-  }, [user]);
-
   if (!radio) return null;
 
   return (
@@ -93,7 +87,7 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
           />
           <HStack mt={4} spacing={4}>
             <Button colorScheme={'orange'} onClick={onClickLikeButton}>
-              {isLiked ? 'お気に入りから削除' : 'お気に入りに登録'}
+              {user && isLiked ? 'お気に入りから削除' : 'お気に入りに登録'}
             </Button>
             <Button colorScheme={'orange'}>レビューを投稿</Button>
           </HStack>
