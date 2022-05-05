@@ -61,6 +61,7 @@ export default async function radikoProgramApi(
               name: radikoDayProgram.radiko.stations.station.name,
               logo: stationLogo,
             },
+            likedCount: 0,
           };
         });
 

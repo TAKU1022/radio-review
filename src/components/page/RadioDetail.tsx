@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Button,
-  Center,
   Divider,
   Flex,
   Heading,
@@ -13,19 +12,45 @@ import {
 } from '@chakra-ui/react';
 import { Radio } from '@/types/radikoProgram';
 import style from '../../styles/RadioDetail.module.css';
+import { useRouter } from 'next/router';
+import { useUser } from '../../hooks/useUser';
+import { likeRadio, unLikeRadio } from '../../firebase/db/like';
+import { useMessage } from '../../hooks/useMessage';
 
 type Props = {
   radio: Radio | undefined;
+  boolLiked: boolean;
 };
 
-export const RadioDetail: React.FC<Props> = ({ radio }) => {
-  if (!radio) return null;
+export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
+  const router = useRouter();
+  const { user } = useUser();
+  const { openMessage } = useMessage();
 
-  const isExistDesc = !radio.desc || radio.desc === '';
-  const customInfo = radio.info.replace(
-    /<a/g,
-    '<a target="_blank" rel="noreferrer"'
-  );
+  const [isLiked, changeIsLiked] = useState(boolLiked);
+  const isExistDesc = radio && (!radio.desc || radio.desc === '');
+  const customInfo = radio
+    ? radio.info.replace(/<a/g, '<a target="_blank" rel="noreferrer"')
+    : '';
+
+  const onClickLikeButton = () => {
+    if (!radio) return;
+    if (!user) return router.push('/login');
+
+    if (isLiked) {
+      unLikeRadio(user.uid, radio.radioId).then(() => {
+        changeIsLiked(false);
+        openMessage('お気に入りから削除しました', 'success');
+      });
+    } else {
+      likeRadio(user.uid, radio.radioId).then(() => {
+        changeIsLiked(true);
+        openMessage('お気に入りに登録しました', 'success');
+      });
+    }
+  };
+
+  if (!radio) return null;
 
   return (
     <>
@@ -61,7 +86,9 @@ export const RadioDetail: React.FC<Props> = ({ radio }) => {
             mt={4}
           />
           <HStack mt={4} spacing={4}>
-            <Button colorScheme={'orange'}>お気に入りに登録</Button>
+            <Button colorScheme={'orange'} onClick={onClickLikeButton}>
+              {user && isLiked ? 'お気に入りから削除' : 'お気に入りに登録'}
+            </Button>
             <Button colorScheme={'orange'}>レビューを投稿</Button>
           </HStack>
         </Box>
@@ -77,7 +104,7 @@ export const RadioDetail: React.FC<Props> = ({ radio }) => {
           )}
           <Box
             dangerouslySetInnerHTML={{ __html: customInfo }}
-            mt={10}
+            mt={isExistDesc ? 0 : 10}
             className={style.info}
           />
         </Box>

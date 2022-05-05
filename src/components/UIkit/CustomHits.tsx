@@ -22,9 +22,9 @@ import {
 } from '@chakra-ui/react';
 import { Radio } from '@/types/radikoProgram';
 import { useUser } from '../../hooks/useUser';
-import { AiOutlineMore } from 'react-icons/ai';
 import { deleteRadioById } from '../../firebase/db/radio';
 import { useMessage } from '../../hooks/useMessage';
+import { FiMoreHorizontal } from 'react-icons/fi';
 
 const Hits: React.FC<HitsProvided<Radio>> = ({ hits }) => {
   const { user } = useUser();
@@ -59,21 +59,21 @@ const Hits: React.FC<HitsProvided<Radio>> = ({ hits }) => {
             </Link>
           </NextLink>
           <Box py={4} px={2}>
-            <Flex justify={'space-between'} align={'center'}>
+            <Flex justify={'space-between'}>
               <Text fontSize={'lg'} fontWeight={'bold'}>
                 <NextLink href={`/radio/${hit.radioId}`} passHref>
                   <Link>{hit.title}</Link>
                 </NextLink>
               </Text>
               {user && user.isAdmin && (
-                <Box>
+                <Box ml={2}>
                   <Menu>
                     <MenuButton
                       as={IconButton}
-                      icon={<AiOutlineMore />}
+                      icon={<FiMoreHorizontal />}
                       size={'sm'}
-                      variant={'outline'}
-                      colorScheme={'blue'}
+                      variant={'ghost'}
+                      fontSize={'20px'}
                     />
                     <MenuList>
                       <MenuItem>編集する</MenuItem>

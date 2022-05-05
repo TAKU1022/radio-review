@@ -68,4 +68,5 @@ export type Radio = {
     name: string;
     logo: string;
   };
+  likedCount: number;
 };
