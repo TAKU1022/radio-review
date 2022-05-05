@@ -44,6 +44,8 @@ const Pagination: React.FC<Props> = ({
     (e) => e + startPage
   );
 
+  if (nbPages === 1) return null;
+
   return (
     <HStack justify={'center'}>
       {prevPage && (

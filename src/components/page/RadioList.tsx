@@ -1,11 +1,12 @@
 import React from 'react';
 import { Box, Center, Heading } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { InstantSearch } from 'react-instantsearch-dom';
-import { Configure, SearchState } from 'react-instantsearch-core';
+import { InstantSearch, Configure } from 'react-instantsearch-dom';
+import { SearchState } from 'react-instantsearch-core';
 import { searchClient } from '../../algolia/client';
 import { CustomHits } from '../UIkit/CustomHits';
 import { CustomPagination } from '../UIkit/CustomPagination';
+import { SearchForm } from '../UIkit/SearchForm';
 
 export const RadioList: React.FC = () => {
   const router = useRouter();
@@ -14,7 +15,6 @@ export const RadioList: React.FC = () => {
     router.push(
       {
         query: {
-          id: router.query.id,
           page: state.page || [],
         },
       },
@@ -31,19 +31,25 @@ export const RadioList: React.FC = () => {
         <Heading>番組一覧</Heading>
       </Center>
       <Box mt={10}>
-        <InstantSearch
-          searchClient={searchClient}
-          onSearchStateChange={updateQueryParams}
-          indexName={'radios'}
-        >
-          <Configure hitsPerPage={12} />
-          <CustomHits />
-          <Box mt={10}>
-            <CustomPagination
-              defaultRefinement={(router.query.page as string) || 1}
-            />
-          </Box>
-        </InstantSearch>
+        <Box maxW={'460px'} mx={'auto'}>
+          <SearchForm />
+        </Box>
+        <Box mt={10}>
+          <InstantSearch
+            searchClient={searchClient}
+            onSearchStateChange={updateQueryParams}
+            indexName={'radios'}
+            refresh={true}
+          >
+            <Configure hitsPerPage={12} />
+            <CustomHits />
+            <Box mt={10}>
+              <CustomPagination
+                defaultRefinement={(router.query.page as string) || 1}
+              />
+            </Box>
+          </InstantSearch>
+        </Box>
       </Box>
     </>
   );
