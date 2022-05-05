@@ -1,22 +1,22 @@
 import React from 'react';
-import { Box, Center, Heading } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { Box, Center, Heading } from '@chakra-ui/react';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { SearchState } from 'react-instantsearch-core';
 import { searchClient } from '../../algolia/client';
 import { CustomHits } from '../UIkit/CustomHits';
 import { CustomPagination } from '../UIkit/CustomPagination';
-import { SearchForm } from '../UIkit/SearchForm';
+import { CustomSearchBox } from '../UIkit/CustomSearchBox';
 
-export const RadioList: React.FC = () => {
+export const Search: React.FC = () => {
   const router = useRouter();
 
   const updateQueryParams = (state: SearchState) => {
-    console.log(state);
     router.push(
       {
         query: {
-          page: state.page || [],
+          q: state.query,
+          page: !state.page || state.page === 1 ? [] : state.page,
         },
       },
       undefined,
@@ -29,13 +29,9 @@ export const RadioList: React.FC = () => {
   return (
     <>
       <Center>
-        <Heading>番組一覧</Heading>
+        <Heading>{router.query.q}に関する番組</Heading>
       </Center>
       <Box mt={10}>
-        <Box maxW={'460px'} mx={'auto'}>
-          <SearchForm />
-        </Box>
-
         <Box mt={10}>
           <InstantSearch
             searchClient={searchClient}
@@ -44,7 +40,12 @@ export const RadioList: React.FC = () => {
             refresh={true}
           >
             <Configure hitsPerPage={12} />
-            <CustomHits />
+            <Box maxW={'460px'} mx={'auto'}>
+              <CustomSearchBox defaultRefinement={router.query.q as string} />
+            </Box>
+            <Box mt={10}>
+              <CustomHits />
+            </Box>
             <Box mt={10}>
               <CustomPagination
                 defaultRefinement={(router.query.page as string) || 1}
