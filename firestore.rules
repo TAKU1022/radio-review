@@ -20,10 +20,13 @@ service cloud.firestore {
       allow delete: if request.auth.uid == resource.data.uid;
 
       match /likedRadios/{radioId} {
+        //誰でも見ることができる
         allow read: if true;
+        //read以外の処理は本人以外できない
         allow write: if request.auth.uid == userId;
       }
     }
+    
     match /radios/{radioId} {
       //誰でも見ることができる
       allow read: if true;
