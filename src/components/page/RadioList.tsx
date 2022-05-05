@@ -12,7 +12,6 @@ export const RadioList: React.FC = () => {
   const router = useRouter();
 
   const updateQueryParams = (state: SearchState) => {
-    console.log(state);
     router.push(
       {
         query: {
