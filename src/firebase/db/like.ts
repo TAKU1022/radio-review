@@ -30,5 +30,5 @@ export const fetchIsLikedRadio = async (
     .doc(radioId)
     .get();
 
-  return !!snapshot.id;
+  return !!snapshot.data();
 };
