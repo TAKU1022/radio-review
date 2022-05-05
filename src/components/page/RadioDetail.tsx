@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Button,
@@ -49,6 +49,12 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
       });
     }
   };
+
+  useEffect(() => {
+    if (!user) {
+      changeIsLiked(false);
+    }
+  }, [user]);
 
   if (!radio) return null;
 

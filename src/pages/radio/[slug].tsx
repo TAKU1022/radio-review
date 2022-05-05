@@ -30,7 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (
 ) => {
   const radioId = context.params ? (context.params.slug as string) : '';
   const cookies = nookies.get(context);
-  const userId: string = cookies.uid || '';
+  const userId: string = cookies.uid;
 
   const radio = await fetchRadioById(radioId);
   const boolLiked = await fetchIsLikedRadio(userId, radioId);
