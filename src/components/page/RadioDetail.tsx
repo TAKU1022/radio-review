@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -14,23 +14,20 @@ import { Radio } from '@/types/radikoProgram';
 import style from '../../styles/RadioDetail.module.css';
 import { useRouter } from 'next/router';
 import { useUser } from '../../hooks/useUser';
-import {
-  fetchIsLikedRadio,
-  likeRadio,
-  unLikeRadio,
-} from '../../firebase/db/like';
+import { likeRadio, unLikeRadio } from '../../firebase/db/like';
 import { useMessage } from '../../hooks/useMessage';
 
 type Props = {
   radio: Radio | undefined;
+  boolLiked: boolean;
 };
 
-export const RadioDetail: React.FC<Props> = ({ radio }) => {
+export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
   const router = useRouter();
   const { user } = useUser();
   const { openMessage } = useMessage();
 
-  const [isLiked, changeIsLiked] = useState(false);
+  const [isLiked, changeIsLiked] = useState(boolLiked);
   const isExistDesc = radio && (!radio.desc || radio.desc === '');
   const customInfo = radio
     ? radio.info.replace(/<a/g, '<a target="_blank" rel="noreferrer"')
@@ -52,16 +49,6 @@ export const RadioDetail: React.FC<Props> = ({ radio }) => {
       });
     }
   };
-
-  useEffect(() => {
-    if (user && radio) {
-      fetchIsLikedRadio(user.uid, radio.radioId).then(
-        (isLikedRadio: boolean) => {
-          changeIsLiked(isLikedRadio);
-        }
-      );
-    }
-  }, [user, radio]);
 
   if (!radio) return null;
 
