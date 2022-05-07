@@ -19,6 +19,8 @@ export const SearchForm: React.FC = () => {
   const { register, handleSubmit } = useForm<FormData>();
 
   const onSubmit = (formData: FormData) => {
+    if (formData.keyword === '') return;
+
     router.push({
       pathname: 'search',
       query: { q: decodeURIComponent(formData.keyword) },

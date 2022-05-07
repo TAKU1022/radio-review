@@ -22,6 +22,8 @@ const SearchBoxBase: React.FC<SearchBoxProvided> = ({
   const { register, handleSubmit } = useForm<FormData>();
 
   const search = (formData: FormData) => {
+    if (formData.keyword === '') return;
+
     refine(formData.keyword);
   };
 

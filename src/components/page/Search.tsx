@@ -34,7 +34,7 @@ export const Search: React.FC = () => {
       <Box mt={10}>
         <InstantSearch
           searchClient={searchClient}
-          searchState={{ q: router.query.q, page: router.query.page || 1 }}
+          searchState={{ page: router.query.page || 1 }}
           onSearchStateChange={updateQueryParams}
           indexName={'radios'}
           refresh={true}
