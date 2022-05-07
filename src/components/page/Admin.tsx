@@ -17,7 +17,7 @@ import {
 } from '@chakra-ui/react';
 import useSWR from 'swr';
 import { Radio } from '@/types/radikoProgram';
-import { fetcher } from '../../util/fetcher';
+import { fetcher } from '../../utility/fetcher';
 import { createRadio } from '../../firebase/db/radio';
 import stationData from '../../data/station.json';
 import { useForm } from 'react-hook-form';
