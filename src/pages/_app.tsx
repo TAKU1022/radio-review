@@ -2,7 +2,6 @@ import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import type { AppProps } from 'next/app';
 import NextNProgress from 'nextjs-progressbar';
 import { UserProvider } from '../contexts/UserProvider';
-import '../styles/index.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const theme = extendTheme({
