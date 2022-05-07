@@ -12,18 +12,12 @@ export const Search: React.FC = () => {
   const router = useRouter();
 
   const updateQueryParams = (state: SearchState) => {
-    router.push(
-      {
-        query: {
-          q: state.query,
-          page: !state.page || state.page === 1 ? [] : state.page,
-        },
+    router.push({
+      query: {
+        q: state.query,
+        page: !state.page || state.page === 1 ? [] : state.page,
       },
-      undefined,
-      {
-        shallow: true,
-      }
-    );
+    });
   };
 
   return (

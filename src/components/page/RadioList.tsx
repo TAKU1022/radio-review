@@ -12,17 +12,11 @@ export const RadioList: React.FC = () => {
   const router = useRouter();
 
   const updateQueryParams = (state: SearchState) => {
-    router.push(
-      {
-        query: {
-          page: state.page || [],
-        },
+    router.push({
+      query: {
+        page: state.page || [],
       },
-      undefined,
-      {
-        shallow: true,
-      }
-    );
+    });
   };
 
   return (
