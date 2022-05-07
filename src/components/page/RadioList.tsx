@@ -37,6 +37,7 @@ export const RadioList: React.FC = () => {
         <Box mt={10}>
           <InstantSearch
             searchClient={searchClient}
+            searchState={{ page: router.query.page || 1 }}
             onSearchStateChange={updateQueryParams}
             indexName={'radios'}
             refresh={true}
