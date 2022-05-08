@@ -3,8 +3,8 @@ import { Radio } from '@/types/radikoProgram';
 import { db } from '..';
 
 export const radioConverter = {
-  toFirestore(user: Radio): firebase.firestore.DocumentData {
-    return { ...user };
+  toFirestore(radio: Radio): firebase.firestore.DocumentData {
+    return { ...radio };
   },
   fromFirestore(
     snapshot: firebase.firestore.QueryDocumentSnapshot,
