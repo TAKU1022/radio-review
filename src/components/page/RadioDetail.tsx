@@ -9,6 +9,7 @@ import {
   Image,
   Tag,
   Text,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { Radio } from '@/types/radikoProgram';
 import style from '../../styles/RadioDetail.module.css';
@@ -24,6 +25,7 @@ type Props = {
 
 export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
   const router = useRouter();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = useUser();
   const { openMessage } = useMessage();
 
