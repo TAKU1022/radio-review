@@ -29,7 +29,5 @@ export const createReviewComment = (
     .set({
       ...reviewComment,
       commentId,
-      // createdAt: new Date(),
-      // updatedAt: new Date(),
     });
 };
