@@ -12,5 +12,5 @@ export type ReviewComment = {
 
 export type ReviewCommentWithUser = {
   reviewComment: ReviewComment;
-  user: User;
+  user?: User;
 };
