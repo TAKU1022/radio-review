@@ -17,6 +17,7 @@ import { useUser } from '../../hooks/useUser';
 import { createReviewComment } from '../../firebase/db/comment';
 import { useMessage } from '../../hooks/useMessage';
 import { FirebaseTimestamp } from '../../firebase';
+import storage from 'store';
 
 type Props = {
   isOpen: boolean;
@@ -31,7 +32,16 @@ type FormData = {
 export const ReviewModal: React.FC<Props> = ({ isOpen, onClose, radio }) => {
   const { user } = useUser();
   const { openMessage } = useMessage();
-  const { register, handleSubmit } = useForm<FormData>();
+  const { register, getValues, handleSubmit, reset, formState } =
+    useForm<FormData>();
+
+  const onCloseModal = () => {
+    onClose();
+
+    if (!formState.isSubmitted) {
+      storage.set(radio.radioId, getValues('comment'));
+    }
+  };
 
   const onSubmit = (formData: FormData) => {
     createReviewComment({
@@ -41,13 +51,15 @@ export const ReviewModal: React.FC<Props> = ({ isOpen, onClose, radio }) => {
       createdAt: FirebaseTimestamp.now(),
       updatedAt: FirebaseTimestamp.now(),
     }).then(() => {
+      reset();
+      storage.remove(radio.radioId);
       openMessage('レビューを投稿しました', 'success');
       onClose();
     });
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size={'xl'} isCentered={true}>
+    <Modal isOpen={isOpen} onClose={onCloseModal} size={'xl'} isCentered={true}>
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>
@@ -58,6 +70,7 @@ export const ReviewModal: React.FC<Props> = ({ isOpen, onClose, radio }) => {
           <form id={'review'} onSubmit={handleSubmit(onSubmit)}>
             <Textarea
               {...register('comment')}
+              defaultValue={storage.get(radio.radioId)}
               placeholder={'コメントを記入'}
               rows={10}
             />
