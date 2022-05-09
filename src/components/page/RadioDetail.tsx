@@ -17,6 +17,7 @@ import { useRouter } from 'next/router';
 import { useUser } from '../../hooks/useUser';
 import { likeRadio, unLikeRadio } from '../../firebase/db/like';
 import { useMessage } from '../../hooks/useMessage';
+import { ReviewModal } from '../UIkit/ReviewModal';
 
 type Props = {
   radio: Radio | undefined;
@@ -50,6 +51,13 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
         openMessage('お気に入りに登録しました', 'success');
       });
     }
+  };
+
+  const onClickReviewButton = () => {
+    if (!radio) return;
+    if (!user) return router.push('/login');
+
+    onOpen();
   };
 
   if (!radio) return null;
@@ -91,7 +99,10 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
             <Button colorScheme={'orange'} onClick={onClickLikeButton}>
               {user && isLiked ? 'お気に入りから削除' : 'お気に入りに登録'}
             </Button>
-            <Button colorScheme={'orange'}>レビューを投稿</Button>
+            <Button colorScheme={'orange'} onClick={onClickReviewButton}>
+              レビューを投稿
+            </Button>
+            <ReviewModal isOpen={isOpen} onClose={onClose} radio={radio} />
           </HStack>
         </Box>
         <Box mt={{ base: 8, lg: 0 }} mr={{ lg: 10 }} flexShrink={0}>

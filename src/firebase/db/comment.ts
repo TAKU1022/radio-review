@@ -18,7 +18,7 @@ export const reviewCommentConverter = {
 };
 
 export const createReviewComment = (
-  reviewComment: Omit<ReviewComment, 'commentId' | 'createdAt' | 'updatedAt'>
+  reviewComment: Omit<ReviewComment, 'commentId'>
 ): Promise<void> => {
   const commentId: string = db.collection('_').doc().id;
   return db
@@ -29,7 +29,7 @@ export const createReviewComment = (
     .set({
       ...reviewComment,
       commentId,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      // createdAt: new Date(),
+      // updatedAt: new Date(),
     });
 };
