@@ -12,16 +12,16 @@ import { userConverter } from '../firebase/db/user';
 import { destroyCookie, setCookie } from 'nookies';
 
 type UserContext = {
-  user: User | null;
+  user: User<Date> | null;
   firebaseUser: firebase.User | null;
-  changeUser: Dispatch<SetStateAction<User | null>>;
+  changeUser: Dispatch<SetStateAction<User<Date> | null>>;
   changeFirebaseUser: Dispatch<SetStateAction<firebase.User | null>>;
 };
 
 export const UserContext = createContext<UserContext | null>(null);
 
 export const UserProvider: React.FC = ({ children }) => {
-  const [user, changeUser] = useState<User | null>(null);
+  const [user, changeUser] = useState<User<Date> | null>(null);
   const [firebaseUser, changeFirebaseUser] = useState<firebase.User | null>(
     null
   );
@@ -39,7 +39,13 @@ export const UserProvider: React.FC = ({ children }) => {
             .withConverter(userConverter)
             .doc(uid)
             .onSnapshot((snapshot) => {
-              changeUser(snapshot.data() || null);
+              const userData: User<firebase.firestore.Timestamp> | undefined =
+                snapshot.data();
+              changeUser(
+                userData
+                  ? { ...userData, createdAt: userData.createdAt.toDate() }
+                  : null
+              );
               firebaseUserData.getIdToken(true);
             });
         } else {

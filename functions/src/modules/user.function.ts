@@ -10,12 +10,13 @@ export const createUser = functions
   .region('asia-northeast1')
   .auth.user()
   .onCreate((userRecord: UserRecord) => {
-    const user: Omit<User, 'createdAt'> = {
+    const user: User<Date> = {
       uid: userRecord.uid,
       name: userRecord.displayName,
       avatarURL: userRecord.photoURL,
       email: userRecord.email,
       isAdmin: false,
+      createdAt: new Date(),
     };
 
     return db

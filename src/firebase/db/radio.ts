@@ -3,8 +3,8 @@ import { Radio } from '@/types/radikoProgram';
 import { db } from '..';
 
 export const radioConverter = {
-  toFirestore(user: Radio): firebase.firestore.DocumentData {
-    return { ...user };
+  toFirestore(radio: Radio): firebase.firestore.DocumentData {
+    return { ...radio };
   },
   fromFirestore(
     snapshot: firebase.firestore.QueryDocumentSnapshot,
@@ -26,7 +26,7 @@ export const createRadio = (radio: Omit<Radio, 'radioId'>): Promise<void> => {
 };
 
 export const fetchAllRadio = async (): Promise<Radio[]> => {
-  const snapshot = await db
+  const snapshot: firebase.firestore.QuerySnapshot<Radio> = await db
     .collection('radios')
     .withConverter(radioConverter)
     .get();
@@ -40,7 +40,7 @@ export const fetchAllRadio = async (): Promise<Radio[]> => {
 export const fetchRadioById = async (
   radioId: string
 ): Promise<Radio | undefined> => {
-  const snapshot = await db
+  const snapshot: firebase.firestore.DocumentSnapshot<Radio> = await db
     .collection('radios')
     .withConverter(radioConverter)
     .doc(radioId)

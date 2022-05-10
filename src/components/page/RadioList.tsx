@@ -12,24 +12,18 @@ export const RadioList: React.FC = () => {
   const router = useRouter();
 
   const updateQueryParams = (state: SearchState) => {
-    router.push(
-      {
-        query: {
-          page: state.page || [],
-        },
+    router.push({
+      query: {
+        page: state.page || [],
       },
-      undefined,
-      {
-        shallow: true,
-      }
-    );
+    });
   };
 
   return (
     <>
-      <Center>
-        <Heading>番組一覧</Heading>
-      </Center>
+      <Heading as={'h1'} display={'flex'} justifyContent={'center'}>
+        番組一覧
+      </Heading>
       <Box mt={10}>
         <Box maxW={'460px'} mx={'auto'}>
           <SearchForm />
@@ -37,6 +31,7 @@ export const RadioList: React.FC = () => {
         <Box mt={10}>
           <InstantSearch
             searchClient={searchClient}
+            searchState={{ page: router.query.page || 1 }}
             onSearchStateChange={updateQueryParams}
             indexName={'radios'}
             refresh={true}

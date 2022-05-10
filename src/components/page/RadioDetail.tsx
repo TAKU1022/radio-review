@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -9,21 +9,31 @@ import {
   Image,
   Tag,
   Text,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { Radio } from '@/types/radikoProgram';
+import { ReviewCommentWithUser } from '@/types/reviewComment';
 import style from '../../styles/RadioDetail.module.css';
 import { useRouter } from 'next/router';
 import { useUser } from '../../hooks/useUser';
 import { likeRadio, unLikeRadio } from '../../firebase/db/like';
 import { useMessage } from '../../hooks/useMessage';
+import { ReviewModal } from '../UIkit/ReviewModal';
+import { CommentList } from '../UIkit/CommentList';
 
 type Props = {
   radio: Radio | undefined;
   boolLiked: boolean;
+  reviewCommentWithUserList: ReviewCommentWithUser[] | undefined;
 };
 
-export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
+export const RadioDetail: React.FC<Props> = ({
+  radio,
+  boolLiked,
+  reviewCommentWithUserList,
+}) => {
   const router = useRouter();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = useUser();
   const { openMessage } = useMessage();
 
@@ -50,6 +60,13 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
     }
   };
 
+  const onClickReviewButton = () => {
+    if (!radio) return;
+    if (!user) return router.push('/login');
+
+    onOpen();
+  };
+
   if (!radio) return null;
 
   return (
@@ -63,7 +80,7 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
         mx={'auto'}
       >
         <Box>
-          <Heading>{radio.title}</Heading>
+          <Heading as={'h1'}>{radio.title}</Heading>
           <Text mt={8} fontSize={'lg'}>
             出演者： {radio.pfm}
           </Text>
@@ -89,15 +106,17 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
             <Button colorScheme={'orange'} onClick={onClickLikeButton}>
               {user && isLiked ? 'お気に入りから削除' : 'お気に入りに登録'}
             </Button>
-            <Button colorScheme={'orange'}>レビューを投稿</Button>
+            <Button colorScheme={'orange'} onClick={onClickReviewButton}>
+              レビューを投稿
+            </Button>
+            <ReviewModal isOpen={isOpen} onClose={onClose} radio={radio} />
           </HStack>
         </Box>
         <Box mt={{ base: 8, lg: 0 }} mr={{ lg: 10 }} flexShrink={0}>
           <Image src={radio.img} alt={radio.title} maxW={'480px'} w={'100%'} />
         </Box>
       </Box>
-      <Divider mt={14} />
-      <Flex justifyContent={'center'} mt={10}>
+      <Flex justifyContent={'center'} mt={16}>
         <Box maxW={'800px'} fontSize={'lg'} overflow={'hidden'}>
           {isExistDesc || (
             <Box dangerouslySetInnerHTML={{ __html: radio.desc! }} />
@@ -109,6 +128,17 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
           />
         </Box>
       </Flex>
+
+      <Divider mt={16} />
+
+      <Box maxW={'800px'} mx={'auto'} mt={16}>
+        <Heading fontSize={'2xl'}>
+          「{radio.title}」に投稿されたレビュー
+        </Heading>
+        <Box mt={8}>
+          <CommentList reviewCommentWithUserList={reviewCommentWithUserList} />
+        </Box>
+      </Box>
     </>
   );
 };

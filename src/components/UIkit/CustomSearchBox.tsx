@@ -5,6 +5,7 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  VisuallyHidden,
 } from '@chakra-ui/react';
 import { Search2Icon } from '@chakra-ui/icons';
 import { useForm } from 'react-hook-form';
@@ -22,14 +23,16 @@ const SearchBoxBase: React.FC<SearchBoxProvided> = ({
   const { register, handleSubmit } = useForm<FormData>();
 
   const search = (formData: FormData) => {
+    if (formData.keyword === '') return;
+
     refine(formData.keyword);
   };
 
   return (
     <form noValidate onSubmit={handleSubmit(search)} role="search">
-      <label htmlFor="search" className="srOnly">
-        番組を検索する
-      </label>
+      <VisuallyHidden>
+        <label htmlFor="search">番組を検索する</label>
+      </VisuallyHidden>
       <HStack spacing={4}>
         <InputGroup>
           <InputLeftElement pointerEvents={'none'}>

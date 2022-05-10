@@ -36,6 +36,18 @@ service cloud.firestore {
       allow update: if isAdmin();
       //管理者だけ削除できる
       allow delete: if isAdmin();
+
+        match /reviewComments/{commentId} {
+        //誰でも見ることができる
+        allow read: if true;
+        //作成者だけ作成できる
+        allow create: if request.auth.uid == request.resource.data.uid;
+        //作成者かつ、そのユーザーを変えようとしていない人がアップデートできる
+        //後半は受信データ(request.resource.data)と既存のデータ(resource.data)を比較している
+        allow update: if request.auth.uid == resource.data.uid && request.resource.data.uid == resource.data.uid;
+        //作成者または管理者だけ削除できる
+        allow delete: if request.auth.uid == resource.data.uid || isAdmin();
+      }
     }
   }
 }

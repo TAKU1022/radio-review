@@ -23,12 +23,13 @@ export const fetchIsLikedRadio = async (
   userId: string,
   radioId: string
 ): Promise<boolean> => {
-  const snapshot = await db
-    .collection('users')
-    .doc(userId)
-    .collection('likedRadios')
-    .doc(radioId)
-    .get();
+  const snapshot: firebase.firestore.DocumentSnapshot<firebase.firestore.DocumentData> =
+    await db
+      .collection('users')
+      .doc(userId)
+      .collection('likedRadios')
+      .doc(radioId)
+      .get();
 
   return !!snapshot.data();
 };
