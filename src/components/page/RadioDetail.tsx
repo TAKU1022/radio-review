@@ -132,7 +132,7 @@ export const RadioDetail: React.FC<Props> = ({
       <Divider mt={16} />
 
       <Box maxW={'800px'} mx={'auto'} mt={16}>
-        <Heading fontSize={'2xl'}>
+        <Heading display={'flex'} justifyContent={'center'} fontSize={'2xl'}>
           「{radio.title}」に投稿されたレビュー
         </Heading>
         <Box mt={8}>
