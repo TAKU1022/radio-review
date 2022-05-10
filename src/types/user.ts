@@ -1,10 +1,10 @@
 import firebase from 'firebase/app';
 
-export type User = {
+export type User<T> = {
   uid: string;
   name?: string;
   avatarURL?: string;
   email?: string;
-  createdAt: firebase.firestore.Timestamp;
+  createdAt: T;
   isAdmin: boolean;
 };

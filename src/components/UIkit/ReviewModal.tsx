@@ -16,7 +16,6 @@ import { Radio } from '@/types/radikoProgram';
 import { useUser } from '../../hooks/useUser';
 import { createReviewComment } from '../../firebase/db/comment';
 import { useMessage } from '../../hooks/useMessage';
-import { FirebaseTimestamp } from '../../firebase';
 import storage from 'store';
 
 type Props = {
@@ -48,8 +47,8 @@ export const ReviewModal: React.FC<Props> = ({ isOpen, onClose, radio }) => {
       text: formData.comment,
       uid: user!.uid,
       radioId: radio.radioId,
-      createdAt: FirebaseTimestamp.now(),
-      updatedAt: FirebaseTimestamp.now(),
+      createdAt: new Date(),
+      updatedAt: new Date(),
     }).then(() => {
       reset();
       storage.remove(radio.radioId);

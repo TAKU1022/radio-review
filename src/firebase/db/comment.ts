@@ -2,16 +2,21 @@ import firebase from 'firebase/app';
 import { ReviewComment, ReviewCommentWithUser } from '@/types/reviewComment';
 import { db } from '..';
 import { fetchUserById } from './user';
+import { User } from '@/types/user';
 
 export const reviewCommentConverter = {
-  toFirestore(reviewComment: ReviewComment): firebase.firestore.DocumentData {
+  toFirestore(
+    reviewComment: ReviewComment<firebase.firestore.Timestamp>
+  ): firebase.firestore.DocumentData {
     return { ...reviewComment };
   },
   fromFirestore(
     snapshot: firebase.firestore.QueryDocumentSnapshot,
     options: firebase.firestore.SnapshotOptions
-  ): ReviewComment {
-    const data = snapshot.data(options) as ReviewComment;
+  ): ReviewComment<firebase.firestore.Timestamp> {
+    const data = snapshot.data(
+      options
+    ) as ReviewComment<firebase.firestore.Timestamp>;
     return {
       ...data,
     };
@@ -19,7 +24,7 @@ export const reviewCommentConverter = {
 };
 
 export const createReviewComment = (
-  reviewComment: Omit<ReviewComment, 'commentId'>
+  reviewComment: Omit<ReviewComment<Date>, 'commentId'>
 ): Promise<void> => {
   const commentId: string = db.collection('_').doc().id;
   return db
@@ -45,17 +50,28 @@ export const fetchReviewCommentsWithUser = async (
 
   if (!snapshot) return;
 
-  const reviewCommentList: ReviewComment[] = snapshot.docs.map(
-    (doc: firebase.firestore.QueryDocumentSnapshot<ReviewComment>) => doc.data()
-  );
-  const reviewCommentsWithUser: ReviewCommentWithUser[] = await Promise.all(
-    reviewCommentList.map(async (reviewComment: ReviewComment) => {
-      return {
-        reviewComment,
-        user: await fetchUserById(reviewComment.uid),
-      };
-    })
+  const reviewCommentList: ReviewComment<firebase.firestore.Timestamp>[] =
+    snapshot.docs.map(
+      (
+        doc: firebase.firestore.QueryDocumentSnapshot<
+          ReviewComment<firebase.firestore.Timestamp>
+        >
+      ) => doc.data()
+    );
+  const reviewCommentWithUserList: ReviewCommentWithUser[] = await Promise.all(
+    reviewCommentList.map(
+      async (reviewComment: ReviewComment<firebase.firestore.Timestamp>) => {
+        return {
+          reviewComment: {
+            ...reviewComment,
+            createdAt: reviewComment.createdAt.toDate(),
+            updatedAt: reviewComment.updatedAt.toDate(),
+          },
+          user: await fetchUserById(reviewComment.uid),
+        };
+      }
+    )
   );
 
-  return reviewCommentsWithUser;
+  return reviewCommentWithUserList;
 };
