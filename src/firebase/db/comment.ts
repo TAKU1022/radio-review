@@ -48,7 +48,7 @@ export const fetchReviewCommentsWithUser = async (
     .withConverter(reviewCommentConverter)
     .get();
 
-  if (!snapshot) return;
+  if (!snapshot || snapshot.docs.length === 0) return;
 
   const reviewCommentList: ReviewComment<firebase.firestore.Timestamp>[] =
     snapshot.docs.map(
@@ -61,13 +61,16 @@ export const fetchReviewCommentsWithUser = async (
   const reviewCommentWithUserList: ReviewCommentWithUser[] = await Promise.all(
     reviewCommentList.map(
       async (reviewComment: ReviewComment<firebase.firestore.Timestamp>) => {
+        const user: User<Date> | undefined = await fetchUserById(
+          reviewComment.uid
+        );
         return {
           reviewComment: {
             ...reviewComment,
             createdAt: reviewComment.createdAt.toDate(),
             updatedAt: reviewComment.updatedAt.toDate(),
           },
-          user: await fetchUserById(reviewComment.uid),
+          user,
         };
       }
     )
