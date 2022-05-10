@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -12,19 +12,26 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import { Radio } from '@/types/radikoProgram';
+import { ReviewCommentWithUser } from '@/types/reviewComment';
 import style from '../../styles/RadioDetail.module.css';
 import { useRouter } from 'next/router';
 import { useUser } from '../../hooks/useUser';
 import { likeRadio, unLikeRadio } from '../../firebase/db/like';
 import { useMessage } from '../../hooks/useMessage';
 import { ReviewModal } from '../UIkit/ReviewModal';
+import { CommentList } from '../UIkit/CommentList';
 
 type Props = {
   radio: Radio | undefined;
   boolLiked: boolean;
+  reviewCommentWithUserList: ReviewCommentWithUser[] | undefined;
 };
 
-export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
+export const RadioDetail: React.FC<Props> = ({
+  radio,
+  boolLiked,
+  reviewCommentWithUserList,
+}) => {
   const router = useRouter();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { user } = useUser();
@@ -73,7 +80,7 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
         mx={'auto'}
       >
         <Box>
-          <Heading>{radio.title}</Heading>
+          <Heading as={'h1'}>{radio.title}</Heading>
           <Text mt={8} fontSize={'lg'}>
             出演者： {radio.pfm}
           </Text>
@@ -109,8 +116,7 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
           <Image src={radio.img} alt={radio.title} maxW={'480px'} w={'100%'} />
         </Box>
       </Box>
-      <Divider mt={14} />
-      <Flex justifyContent={'center'} mt={10}>
+      <Flex justifyContent={'center'} mt={16}>
         <Box maxW={'800px'} fontSize={'lg'} overflow={'hidden'}>
           {isExistDesc || (
             <Box dangerouslySetInnerHTML={{ __html: radio.desc! }} />
@@ -122,6 +128,17 @@ export const RadioDetail: React.FC<Props> = ({ radio, boolLiked }) => {
           />
         </Box>
       </Flex>
+
+      <Divider mt={16} />
+
+      <Box maxW={'800px'} mx={'auto'} mt={16}>
+        <Heading fontSize={'2xl'}>
+          「{radio.title}」に投稿されたレビュー
+        </Heading>
+        <Box mt={8}>
+          <CommentList reviewCommentWithUserList={reviewCommentWithUserList} />
+        </Box>
+      </Box>
     </>
   );
 };
