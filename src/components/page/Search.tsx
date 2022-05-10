@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { Box, Center, Heading } from '@chakra-ui/react';
+import { Box, Heading } from '@chakra-ui/react';
 import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import { SearchState } from 'react-instantsearch-core';
 import { searchClient } from '../../algolia/client';
@@ -22,9 +22,9 @@ export const Search: React.FC = () => {
 
   return (
     <>
-      <Center>
-        <Heading>{router.query.q}に関する番組</Heading>
-      </Center>
+      <Heading as={'h1'} display={'flex'} justifyContent={'center'}>
+        {router.query.q}に関する番組
+      </Heading>
       <Box mt={10}>
         <InstantSearch
           searchClient={searchClient}

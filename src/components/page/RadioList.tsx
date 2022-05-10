@@ -21,9 +21,9 @@ export const RadioList: React.FC = () => {
 
   return (
     <>
-      <Center>
-        <Heading>番組一覧</Heading>
-      </Center>
+      <Heading as={'h1'} display={'flex'} justifyContent={'center'}>
+        番組一覧
+      </Heading>
       <Box mt={10}>
         <Box maxW={'460px'} mx={'auto'}>
           <SearchForm />
