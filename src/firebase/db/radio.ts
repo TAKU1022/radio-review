@@ -37,6 +37,20 @@ export const fetchAllRadio = async (): Promise<Radio[]> => {
   return radioList;
 };
 
+export const fetchRadioList = async (): Promise<Radio[]> => {
+  const snapshot: firebase.firestore.QuerySnapshot<Radio> = await db
+    .collection('radios')
+    .withConverter(radioConverter)
+    .orderBy('likedCount')
+    .limit(6)
+    .get();
+  const radioList = snapshot.docs.map(
+    (doc: firebase.firestore.QueryDocumentSnapshot<Radio>) => doc.data()
+  );
+
+  return radioList;
+};
+
 export const fetchRadioById = async (
   radioId: string
 ): Promise<Radio | undefined> => {
